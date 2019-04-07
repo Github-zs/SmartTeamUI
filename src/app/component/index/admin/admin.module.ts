@@ -4,17 +4,16 @@ import {MenuBarComponent} from "../menu-bar/menu-bar.component";
 import {MenuLeftComponent} from "../menu-left/menu-left.component";
 import {AdminComponent} from "./admin.component";
 import {AdminRoutingModule} from "./admin-routing.module";
-import {MyeditorComponent} from "../../common/myeditor/myeditor.component";
 import {CreateModalComponent} from "../../create-modal/create-modal.component";
 import {HttpClient} from "@angular/common/http";
+import {MyeditorModule} from "../../common/myeditor/myeditor.module";
 
 @NgModule({
   declarations: [
     AdminComponent,
     MenuBarComponent,
     MenuLeftComponent,
-    CreateModalComponent,
-    MyeditorComponent
+    CreateModalComponent
   ],
   entryComponents: [
     CreateModalComponent
@@ -25,7 +24,8 @@ import {HttpClient} from "@angular/common/http";
   providers:[HttpClient],
   imports: [
     CommonModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    MyeditorModule
   ]
 })
 export class AdminModule { }
