@@ -5,7 +5,12 @@ import { PagesComponent } from './pages.component';
 const routes: Routes = [{
   path: '',
   component: PagesComponent,
-  children: [],
+  children: [
+    {
+      path: 'reset-password-management',
+      loadChildren: './reset-password/reset-password-management.module#ResetPasswordManagementModule',
+    },
+  ],
 }];
 
 @NgModule({
