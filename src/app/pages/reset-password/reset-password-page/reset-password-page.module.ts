@@ -3,11 +3,14 @@ import {ThemeModule} from '../../../@theme/theme.module';
 import {CommonModule} from '@angular/common';
 import {ResetPasswordPageRoutingModule} from './reset-password-page-routing.module';
 import {ResetPasswordPageComponent} from './reset-password-page.component';
+import {NbCardModule, NbInputModule} from '@nebular/theme';
 
 @NgModule({
   imports: [
     ThemeModule,
     CommonModule,
+    NbCardModule,
+    NbInputModule,
     ResetPasswordPageRoutingModule,
   ],
   declarations: [ResetPasswordPageComponent],
