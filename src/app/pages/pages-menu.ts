@@ -10,7 +10,7 @@ export const MENU_ITEMS: NbMenuItem[] = [
   {
     title: '任务总揽',
     icon: 'nb-list',
-    link: '',
+    link: '/pages/all-task-management/all-task-page',
   },
   {
     title: '文档',

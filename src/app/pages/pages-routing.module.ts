@@ -22,6 +22,10 @@ const routes: Routes = [{
       path: 'dashboard-management',
       loadChildren: './dashboard-management/dashboard-management.module#DashboardManagementModule',
     },
+    {
+      path: 'all-task-management',
+      loadChildren: './all-task-management/all-task-management.module#AllTaskManagementModule',
+    },
   ],
 }];
 
