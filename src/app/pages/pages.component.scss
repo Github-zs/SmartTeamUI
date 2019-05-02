@@ -16,3 +16,7 @@
     }
   }
 }
+
+:host ::ng-deep .menu-title::after {
+  content: normal !important;
+}
