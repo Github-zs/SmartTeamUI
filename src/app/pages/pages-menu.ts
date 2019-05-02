@@ -2,11 +2,48 @@ import { NbMenuItem } from '@nebular/theme';
 
 export const MENU_ITEMS: NbMenuItem[] = [
   {
-    title: 'technology share',
+    title: '首页',
+    icon: 'nb-home',
+    link: '',
+    home: true,
+  },
+  {
+    title: '我的任务',
+    icon: 'nb-checkmark-circle',
+    link: '',
+  },
+  {
+    title: '任务总揽',
+    icon: 'nb-list',
+    link: '',
+  },
+  {
+    title: '文档',
+    icon: 'nb-title',
+    children: [
+      {
+        title: '需求文档',
+        link: '',
+      },
+      {
+        title: '设计文档',
+        link: '',
+      },
+    ],
+  },
+  {
+    title: '技术分享',
+    icon: 'nb-paper-plane',
     link: '/pages/technology-share-management/technology-share-page',
   },
   {
-    title: 'reset password',
+    title: '个人空间',
+    icon: 'nb-compose',
+    link: '/pages/personal-space-management/personal-space-page',
+  },
+  {
+    title: '重置密码',
+    icon: 'nb-loop',
     link: '/pages/reset-password-management/reset-password',
   },
 

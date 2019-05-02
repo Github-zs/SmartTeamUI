@@ -14,6 +14,10 @@ const routes: Routes = [{
       path: 'technology-share-management',
       loadChildren: './technology-share-management/technology-share-management.module#TechnologyShareManagementModule',
     },
+    {
+      path: 'personal-space-management',
+      loadChildren: './personal-space-management/personal-space-management.module#PersonalSpaceManagementModule',
+    },
   ],
 }];
 
