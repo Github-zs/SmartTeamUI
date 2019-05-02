@@ -18,6 +18,10 @@ const routes: Routes = [{
       path: 'personal-space-management',
       loadChildren: './personal-space-management/personal-space-management.module#PersonalSpaceManagementModule',
     },
+    {
+      path: 'dashboard-management',
+      loadChildren: './dashboard-management/dashboard-management.module#DashboardManagementModule',
+    },
   ],
 }];
 

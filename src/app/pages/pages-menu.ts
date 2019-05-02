@@ -4,13 +4,8 @@ export const MENU_ITEMS: NbMenuItem[] = [
   {
     title: '首页',
     icon: 'nb-home',
-    link: '',
+    link: '/pages/dashboard-management/dashboard-page',
     home: true,
-  },
-  {
-    title: '我的任务',
-    icon: 'nb-checkmark-circle',
-    link: '',
   },
   {
     title: '任务总揽',
