@@ -41,6 +41,12 @@ export class ResetPasswordPageComponent implements OnInit {
     }, { validator: passwordMatcherValidator });
   }
 
+  checkOldPassword() {
+    this.service.selectByLoginName('test1').subscribe( data => {
+      console.log(data);
+    });
+  }
+
   save() {
     this.service.getAllUser().subscribe( data => {
       console.log(data);
