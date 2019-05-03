@@ -6,15 +6,15 @@
 import { AbstractControl } from '@angular/forms';
 
 export const passwordMatcherValidator = (control: AbstractControl): {[key: string]: any} => {
-  const password = control.get('password').value, rpassword = control.get('rpassword').value;
+  const password = control.get('newPassword').value, rpassword = control.get('confirmPassword').value;
   if (!password || !rpassword) {
     return null;
   }
   if (password !== rpassword) {
     control.markAsTouched();
     return {
-      noMatch: true
+      noMatch: true,
     };
   }
   return null;
-}
+};

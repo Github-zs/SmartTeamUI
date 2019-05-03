@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import * as _ from 'lodash';
+import {passwordMatcherValidator} from '../../../@core/eaf-components/common/form-validation/password-matcher.validator';
 
 @Component({
   selector: 'ngx-reset-password-page',
@@ -35,7 +36,7 @@ export class ResetPasswordPageComponent implements OnInit {
         '',
         [Validators.required],
       ],
-    });
+    }, { validator: passwordMatcherValidator });
   }
 
   save() {
