@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import * as _ from 'lodash';
 import {passwordMatcherValidator} from '../../../@core/eaf-components/common/form-validation/password-matcher.validator';
+import {UserHttpService} from '../service/user-http.service';
 
 @Component({
   selector: 'ngx-reset-password-page',
@@ -16,6 +17,7 @@ export class ResetPasswordPageComponent implements OnInit {
   constructor(
     private route: Router,
     private fb: FormBuilder,
+    private service: UserHttpService,
   ) { }
 
   ngOnInit() {
@@ -40,6 +42,9 @@ export class ResetPasswordPageComponent implements OnInit {
   }
 
   save() {
+    this.service.getAllUser().subscribe( data => {
+      console.log(data);
+    });
     console.log(this.passwordForm.value);
   }
 

@@ -3,6 +3,7 @@ import {ResetPasswordManagementComponent} from './reset-password-management.comp
 import {ThemeModule} from '../../@theme/theme.module';
 import {CommonModule} from '@angular/common';
 import {ResetPasswordManagementRoutingModule} from './reset-password-management-routing.module';
+import {UserHttpService} from './service/user-http.service';
 
 @NgModule({
   imports: [
@@ -11,6 +12,7 @@ import {ResetPasswordManagementRoutingModule} from './reset-password-management-
     ResetPasswordManagementRoutingModule,
   ],
   declarations: [ResetPasswordManagementComponent],
+  providers: [UserHttpService],
 })
 export class ResetPasswordManagementModule {
 
