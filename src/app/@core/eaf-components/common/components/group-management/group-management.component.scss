@@ -1,0 +1,226 @@
+@import '../../styles/angular-tree-component.css';
+.spbrow {
+    margin-top: 5px !important;
+}
+
+.width-52 {
+    width: 52px !important;
+}
+
+.width-64 {
+    width: 64px !important;
+}
+
+.heigth-500 {
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+#group-members {
+    .margin-left-6 {
+        margin-left: 6px;
+    }
+    .margin-top-minus-6 {
+        margin-top: -6px !important;
+    }
+}
+
+table.dataTable.group-members-table thead th.no-sorting{
+    pointer-events: none;
+    background-image: none!important;
+}
+
+#group-management {
+    .in-bold {
+        font-weight: bold;
+    }
+    .table-width {
+        height: calc(100vh - 45px) !important;
+    }
+    .margin-left-6 {
+        margin-left: 6px;
+    }
+    .margin-right-6 {
+        margin-right: 6px;
+    }
+    .margin-bottom-6 {
+        margin-bottom: 6px;
+    }
+    .margin-top-6 {
+        margin-top: 6px;
+    }
+
+    .nav-tabs > li {
+        padding: 0 4px 0 0;
+        margin: 0 4px 0 0;
+    }
+
+    .nav-tabs > li.active > a,
+    .nav-tabs > li > a:hover,
+    .nav-tabs > li > a:focus {
+        color: #000;
+        cursor: pointer;
+        background: 0 0 !important;
+        border-bottom: 4px solid #9fe4ea !important;
+        border-top: 0 !important;
+        border-left: 0 !important;
+        border-right: 0 !important;
+    }
+
+    .tab-font {
+        font-size: 13px;
+    }
+
+    .active-group {
+        font-weight: bold;
+        cursor: pointer;
+        white-space: normal !important;
+    }
+
+    .user-popover {
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        height: 300px;
+        width: 300px;
+        margin-left: -50px;
+        margin-top: -50px;
+        z-index: 9999;
+        background-color: #fff;
+        box-shadow: 3px 3px 3px #888888;
+    }
+
+    table.dataTable.order-column, #role-management table.dataTable.order-column.display {
+        tbody {
+            tr {
+                cursor: pointer;
+            }
+            tr > .sorting_1 {
+                background: inherit;
+            }
+
+            tr > .sorting_2 {
+                background: inherit;
+            }
+
+            tr > .sorting_3 {
+                background: inherit;
+            }
+
+        }
+    }
+
+    .datafab-editor-panel, .datafab-details-sidebar {
+        overflow-y: auto;
+    }
+
+    .vertical-button-group {
+        float: left;
+        .btn {
+            margin: 6px 0px 0px 0px !important;
+        }
+    }
+}
+
+div.angular-tree-component {
+    padding-left: 0;
+    margin-left: -5px;
+    div.tree-children {
+        position: relative;
+        padding-left: 0;
+        margin-left: 16px;
+        &::before{
+            content: "";
+            position: absolute;
+            border-left: 1px dotted #23527c;
+            height: 100%;
+            top: -12px;
+            left: 5px
+        }
+    }
+    > tree-node &::before {
+        left: 14px
+    }
+    tree-node {
+        > div {
+            &.tree-node-level-1::before{
+                width: 0px;
+            }
+            >.node-wrapper {
+                margin-left: 24px;
+                .node-content-wrapper {
+                    margin-left: 6px;
+                    margin-top: 2px;
+                    display: inline-block;
+                }
+                > tree-node-expander >.toggle-children-wrapper {
+                    left: 22px
+                }
+            }
+            &.tree-node-leaf>.node-wrapper {
+                margin-left: 0;
+            }
+            &::before {
+                content: "";
+                position: absolute;
+                border-bottom: 1px dotted #23527c;
+                width: 7px;
+                margin-top: 12px;
+                left: 7px;
+            }
+            .toggle-children-wrapper {
+                width: 13px;
+                height: 13px;
+                border: 1px solid #23527c;
+                position: absolute;
+                left: 15px;
+                margin-top: 5px;
+                margin-left: 0;
+                display: inline-block;
+                background-color: #fff;
+                z-index: 1;
+                &::before {
+                    content: "";
+                    display: inline-block;
+                    width: 7px;
+                    border-top: 1px solid #23527c;
+                    position: absolute;
+                    top: 5px;
+                    left: 2px
+                }
+                &.toggle-children-wrapper-collapsed::after {
+                    content: "";
+                    display: inline-block;
+                    height: 7px;
+                    border-left: 1px solid #23527c;
+                    position: absolute;
+                    top: 2px;
+                    left: 5px
+                }
+                .toggle-children {
+                    display: none
+                }
+            }
+            .node-content-wrapper {
+                margin-left: 13px
+            }
+        }
+    }
+}
+
+tree-view .portlet-title {
+    cursor: unset !important;
+}
+
+tree-node-expander {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    position: relative;
+}
+
+.node-wrapper {
+    display: block !important;
+    white-space: nowrap;
+    width: 100%;
+}

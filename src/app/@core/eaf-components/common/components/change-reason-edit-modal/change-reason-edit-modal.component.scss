@@ -1,0 +1,16 @@
+/**
+ * Created Date: Wednesday, December 6th 2017, 01:22:27 am
+ * Author: KSC
+ * Copyright (c) 2017 Kingland System Corporation. All Rights Reserved
+ */
+
+ .select2-container--default {
+    .select2-selection--single {
+        height: 34px !important;
+        border: 1px solid #c2cad8 !important;
+    }
+}
+.select2-selection__rendered,
+select2-selection__arrow {
+    margin-top: 3px !important;
+}

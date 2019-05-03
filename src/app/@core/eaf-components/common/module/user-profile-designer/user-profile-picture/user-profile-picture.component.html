@@ -1,0 +1,68 @@
+<div class="profile-info-body" id="picture-wrapper-body">
+    <div class="row">
+        <div class="picture-container">
+            <div class="default-pic" *ngIf="!(user&&user.fullPath)">
+                <i class="fa fa-user-circle"></i>
+            </div>
+            <div class="default-pic" *ngIf="(user&&user.fullPath)">
+                <img width="200px" [src]="((user.fullPath | image) | async)|| ''"  alt="">
+            </div>
+            <!--<div class="default-pic">-->
+                <!--<i class="fa fa-user-circle"></i>-->
+            <!--</div>-->
+        </div>
+        <div class="text-center profile-info-title" [title]="userFullName">{{ userFullName }}</div>
+        <div class="text-center profile-info-title" [title]="user.userDetailModel.title">{{user.userDetailModel.title}}</div>
+    </div>
+    <!-- <div class="row" *ngIf="editMode && canSave"> -->
+    <div class="row" *ngIf="editMode">
+        <div class="col-md-7 col-sm-11 col-xs-11" style="height: 30px;">
+            <label for="myUploader" class="custom-file-upload">
+                <i class="fa fa-upload"></i>&nbsp;&nbsp;{{'CHANGE_YOUR_PROFILE_PICTURE' | translate}}
+            </label>
+            <input id="myUploader" type="file" ng2FileSelect [uploader]="uploader" multiple accept=".png, .jpeg, .jpg, .gif"/>
+        </div>
+        <div class="col-md-1 hidden-sm profile-uploader-tips" style="height: 30px;">
+            <i class="fa fa-question-circle" title="{{'PICTURES_ONLY_SUPPORT_SOME_FILES' | translate}}"></i>
+        </div>
+        <div class="col-md-12" style="margin-bottom: 40px;overflow-x: auto;" [hidden]="uploader.queue.length==0">
+            <table class="table">
+                <thead>
+                <tr>
+                    <th width="50%">{{'WORKFLOW_MANAGEMENT_NAME' | translate}}</th>
+                    <th>{{'SIZE' | translate}}</th>
+                    <th>{{'PROGRESS' | translate}}</th>
+                    <th>{{'STATUS' | translate}}</th>
+                    <th>{{'ACTIONS' | translate}}</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let item of uploader.queue">
+                    <td><strong>{{ item?.file?.name }}</strong></td>
+                    <td *ngIf="uploader.options.isHTML5" nowrap>{{ item?.file?.size/1024/1024| number:'.2' }} MB</td>
+                    <td *ngIf="uploader.options.isHTML5">
+                        <div class="progress" style="margin-bottom: 0;">
+                            <div class="progress-bar" role="progressbar"
+                                 [ngStyle]="{ 'width': item.progress + '%' }"></div>
+                        </div>
+                    </td>
+                    <td class="text-center">
+                        <span *ngIf="item.isSuccess"><i class="glyphicon glyphicon-ok"></i></span>
+                        <span *ngIf="item.isError"><i class="glyphicon glyphicon-remove"></i></span>
+                    </td>
+                    <td nowrap>
+                        <button type="button" class="btn btn-success btn-xs"
+                                (click)="item.upload()" [disabled]="item.isReady || item.isUploading || item.isSuccess">
+                            <span class="glyphicon glyphicon-upload"></span> {{'Upload' | translate}}
+                        </button>
+                        <button type="button" class="btn btn-danger btn-xs"
+                                (click)="item.remove()">
+                            <span class="glyphicon glyphicon-trash"></span> {{'GROUP_MANAGEMENT_REMOVE' | translate}}
+                        </button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

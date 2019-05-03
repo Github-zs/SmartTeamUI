@@ -1,0 +1,31 @@
+<form [formGroup]="detailForm" class="row spbrow">
+  <div class="col-xs-12">
+    <div class="row">
+      <div class="col-xs-2">
+        <span>{{'WORKFLOW_MANAGEMENT_NAME' | translate}}</span>
+      </div>
+      <div class="col-xs-10" [class.has-error]="detailForm.get('roleName').invalid && detailForm.get('roleName').touched">
+        <!-- <input type="text" class="form-control" ng-model="role.roleName" ng-disabled="!canPersist" /> -->
+        <input formControlName="roleName" type="text" class="form-control" (blur)="removeBlanks('roleName')"/>
+      </div>
+    </div>
+    <div class="row spbrow">
+      <div class="col-xs-2">
+        <span>{{'WORKFLOW_MANAGEMENT_DESCRIPTION' | translate}}</span>
+      </div>
+      <div class="col-xs-10" [class.has-error]="detailForm.get('roleDesc').invalid && detailForm.get('roleDesc').touched">
+        <!-- <input type="text" class="form-control" ng-model="role.roleDesc" ng-disabled="!canPersist" /> -->
+        <input formControlName="roleDesc" type="text" class="form-control" (blur)="removeBlanks('roleDesc')"/>
+      </div>
+    </div>
+    <div class="row spbrow">
+      <div class="col-xs-2">
+        <span>{{'WORKFLOW_MANAGEMENT_ACTIVE' | translate}}</span>
+      </div>
+      <div class="col-xs-10">
+        <!-- <input type="checkbox" ng-model="role.isActive" ng-disabled="!canPersist" /> -->
+        <input formControlName="isActive" type="checkbox"/>
+      </div>
+    </div>
+  </div>
+</form>

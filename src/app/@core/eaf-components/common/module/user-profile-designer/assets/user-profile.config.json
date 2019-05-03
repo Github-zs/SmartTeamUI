@@ -1,0 +1,269 @@
+{
+    "blocks": [
+        {
+            "blockName": "Details",
+            "blockGroupId": "Details",
+            "blockId": "detailBlock",
+            "isRequired": false,
+            "isOpened": true,
+            "blockOrder": 0,
+            "blockType": "stable",
+            "blockContent": [
+                {
+                    "displayOrder": 0,
+                    "entryName": "First Name",
+                    "entryKey": "firstName",
+                    "displayType": "label",
+                    "editType": "ksc-text-editor",
+                    "validator": [{
+                        "validate": "KSCRequiredValidator",
+                        "errMsg": "First Name can not be empty."
+                    }, {
+                        "validate": "KSCMaxLengthValidator#200",
+                        "errMsg": "First Name is too long."
+                    }],
+                    "initData": null,
+                    "defaultValue": null,
+                    "isRequired": true
+                },
+                {
+                    "displayOrder": 1,
+                    "entryName": "Last Name",
+                    "entryKey": "lastName",
+                    "displayType": "label",
+                    "editType": "ksc-text-editor",
+                    "validator": [{
+                        "validate": "KSCRequiredValidator",
+                        "errMsg": "Last Name can not be empty."
+                    }, {
+                        "validate": "KSCMaxLengthValidator#200",
+                        "errMsg": "Last Name is too long."
+                    }],
+                    "initData": null,
+                    "defaultValue": null,
+                    "isRequired": true
+                },
+                {
+                    "displayOrder": 2,
+                    "entryName": "Interests",
+                    "entryKey": "interests",
+                    "displayType": "label",
+                    "editType": "ksc-text-editor",
+                    "validator": [{
+                        "validate": "KSCMaxLengthValidator#500",
+                        "errMsg": "Interests is too long."
+                    }],
+                    "initData": null,
+                    "defaultValue": null
+                },
+                {
+                    "displayOrder": 3,
+                    "entryName": "Title",
+                    "entryKey": "title",
+                    "displayType": "label",
+                    "editType": "ksc-text-editor",
+                    "validator": [{
+                        "validate": "KSCMaxLengthValidator#300",
+                        "errMsg": "Title is too long."
+                    }],
+                    "initData": null,
+                    "defaultValue": null
+                },
+                {
+                    "displayOrder": 4,
+                    "entryName": "Effective Date",
+                    "entryKey": "effectiveDate",
+                    "displayType": "label",
+                    "editType": "ksc-datepicker-editor",
+                    "validator": [],
+                    "initData": null,
+                    "defaultValue": null
+                },
+                {
+                    "displayOrder": 5,
+                    "entryName": "Bio",
+                    "entryKey": "bio",
+                    "displayType": "label",
+                    "editType": "ksc-text-editor",
+                    "validator": [{
+                        "validate": "KSCMaxLengthValidator#300",
+                        "errMsg": "Bio is too long."
+                    }],
+                    "initData": null,
+                    "defaultValue": null
+                },
+                {
+                    "displayOrder": 6,
+                    "entryName": "Birthdate",
+                    "entryKey": "birthdate",
+                    "displayType": "label",
+                    "editType": "ksc-datepicker-editor",
+                    "validator": [],
+                    "initData": null,
+                    "defaultValue": null
+                }
+            ]
+        },{
+            "blockName": "Addresses",
+            "blockGroupId": "Addresses",
+            "buttonName": "Address",
+            "blockId": "addressList",
+            "isRequired": false,
+            "isOpened": false,
+            "blockOrder": 1,
+            "blockType": "extendible",
+            "generateId": "addressId",
+            "initOption": {
+                "addressId": null,
+                "addressLineOne": null,
+                "addressLineTwo": null,
+                "addressTypeCode": null,
+                "isActive": true,
+                "city": null,
+                "countryCode": null,
+                "stateProvinceCode": null,
+                "postalCode": null,
+                "userId": null,
+                "transactionId": null
+            },
+            "blockContent": [
+                {
+                    "displayOrder": 0,
+                    "entryName": "Address Type",
+                    "entryKey": "addressTypeCode",
+                    "displayType": "label",
+                    "editType": "ksc-select-editor",
+                    "validator": [
+                        {
+                            "validate": "KSCRequiredValidator",
+                            "errMsg": "Address Type can not be empty."
+                        }
+                    ],
+                    "initData": [],
+                    "defaultValue": null
+                },
+                {
+                    "displayOrder": 1,
+                    "entryName": "Address Line 1",
+                    "entryKey": "addressLineOne",
+                    "displayType": "label",
+                    "editType": "ksc-text-editor",
+                    "validator": [{
+                        "validate": "KSCMaxLengthValidator#100",
+                        "errMsg": "Address Line 1 is too long."
+                    }],
+                    "initData": null,
+                    "defaultValue": null
+                },
+                {
+                    "displayOrder": 2,
+                    "entryName": "City",
+                    "entryKey": "city",
+                    "displayType": "label",
+                    "editType": "ksc-text-editor",
+                    "validator": [
+                        {
+                            "validate": "KSCRequiredValidator",
+                            "errMsg": "City can not be empty."
+                        },
+                        {
+                            "validate": "KSCMaxLengthValidator#60",
+                            "errMsg": "City is too long."
+                        }
+                    ],
+                    "initData": null,
+                    "defaultValue": null
+                },
+                {
+                    "displayOrder": 3,
+                    "entryName": "Country",
+                    "entryKey": "countryCode",
+                    "displayType": "label",
+                    "editType": "ksc-select-editor",
+                    "validator": [],
+                    "initData": [],
+                    "defaultValue": null,
+                    "child": "stateProvinceCode"
+                },
+                {
+                    "displayOrder": 4,
+                    "entryName": "State / Province",
+                    "entryKey": "stateProvinceCode",
+                    "displayType": "label",
+                    "editType": "ksc-select-editor",
+                    "validator": [],
+                    "initData": null,
+                    "defaultValue": null
+                }
+            ]
+        },
+        {
+            "blockName": "Contact Methods (At least one Email Address)",
+            "blockGroupId": "Contacts",
+            "buttonName": "Contact",
+            "blockId": "contactMethodList",
+            "isRequired": false,
+            "isOpened": false,
+            "blockOrder": 2,
+            "blockType": "extendible",
+            "generateId": "contactMethodId",
+            "initOption": {
+                "contactMethodId": null,
+                "contactMethodTypeCode": null,
+                "contactMethodValue": null,
+                "userId": null,
+                "isActive": true,
+                "transactionId": null,
+                "typeHistory": null,
+                "valueHistory": null,
+                "isNew": true
+            },
+            "blockContent": [
+                {
+                    "displayOrder": 0,
+                    "entryName": "Type",
+                    "entryKey": "contactMethodTypeCode",
+                    "displayType": "label",
+                    "editType": "ksc-select-editor",
+                    "linkage": {
+                        "editType": "ksc-text-editor",
+                        "entryKey": "contactMethodValue"
+                    },
+                    "validator": [
+                        {
+                            "validate": "KSCRequiredValidator",
+                            "errMsg": "Contact Type can not be empty."
+                        },
+                        {
+                            "validate": "UserProfileEmailUniqueValidator"
+                        }
+                    ],
+                    "initData": null,
+                    "defaultValue": null
+                },
+                {
+                    "displayOrder": 1,
+                    "entryName": "Value",
+                    "entryKey": "contactMethodValue",
+                    "displayType": "label",
+                    "editType": "ksc-text-editor",
+                    "validator": [
+                        {
+                            "validate": "KSCRequiredValidator",
+                            "errMsg": "Contact Value can not be empty."
+                        },
+                        {
+                            "validate": "UserProfileContactMethodValidator"
+                        },
+                        {
+                            "validate": "KSCMaxLengthValidator#50",
+                            "errMsg": "Contact method value is too long."
+                        }
+                    ],
+                    "initData": null,
+                    "defaultValue": null
+                }
+            ]
+        }
+    ]
+}

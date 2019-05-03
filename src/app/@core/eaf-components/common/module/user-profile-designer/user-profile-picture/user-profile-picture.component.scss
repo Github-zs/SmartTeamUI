@@ -1,0 +1,59 @@
+
+.my-drop-zone { border: dotted 3px lightgray; }
+.nv-file-over { border: dotted 3px red; } /* Default class applied to drop zones on over */
+.another-file-over-class { border: dotted 3px green; }
+
+#picture-wrapper-body{
+    padding-bottom: 25px;
+}
+
+.picture-container{
+    display: flex;
+    flex-flow: nowrap;
+    justify-content:space-around;
+}
+.picture-container .default-pic{
+    overflow: hidden;
+    max-width: 200px;
+    line-height: 200px;
+    max-height: 200px;
+}
+
+.picture-container .default-pic i{
+    font-size: 10em;
+}
+
+input[type="file"] {
+    width: 100%;
+    z-index: 5;
+    position: absolute;
+    height: 30px;
+    opacity: 0;
+}
+.custom-file-upload {
+    width: 95%;
+    height: 30px;
+    position: absolute;
+    border: 1px solid #ccc;
+    padding: 6px 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.profile-uploader-tips {
+    line-height: 1.2em !important;
+    vertical-align: middle;
+    height: 30px;
+    font-size: 20px;
+}
+.profile-info-body {
+    background: white;
+    padding: 20px;
+    padding-bottom: 25px;
+}
+.profile-info-title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin: 5px 10% 5px 10%;
+}

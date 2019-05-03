@@ -1,0 +1,70 @@
+<div class="profile-info-body">
+    <div class="form-group row spbrow data-pointer-row">
+        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+            <label class="datafabric-font-style">{{'NATURAL_PERSON_LANGUAGE'|translate}}</label>
+        </div>
+        <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+            <ksc-select-picker *ngIf="editMode && options"
+                [allowClear]="false"
+                [options]="selectOptions"
+                [data]="options[userProfileCodeType.LanguageType]"
+                [defaultValue]="userDetail.preferredLanguage"
+                (selected)="valueChanged($event, userProfileCodeType.LanguageType)"
+           ></ksc-select-picker>
+           <span *ngIf="!editMode">
+               {{preferredLanguageText}}
+            </span>
+        </div>
+    </div>
+    <div class="form-group row spbrow data-pointer-row">
+        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+            <label class="datafabric-font-style">{{'NATURAL_PERSON_TIME_ZONE'|translate}}</label>
+        </div>
+        <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+            <ksc-select-picker *ngIf="editMode && options"
+                [allowClear]="false"
+                [options]="selectOptions"
+                [data]="options[userProfileCodeType.TimeZone]"
+                [defaultValue]="userDetail.preferredTimeZone"
+                (selected)="valueChanged($event, userProfileCodeType.TimeZone)"
+            ></ksc-select-picker>
+            <span *ngIf="!editMode">
+                {{preferredTimeZoneText}}
+            </span>
+        </div>
+    </div>
+    <div class="form-group row spbrow data-pointer-row">
+        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+            <label class="datafabric-font-style">{{'NATURAL_PERSON_CURRENCY'|translate}}</label>
+        </div>
+        <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+            <ksc-select-picker *ngIf="editMode && options"
+                [allowClear]="false"
+                [options]="selectOptions"
+                [data]="options[userProfileCodeType.CurrencyType]"
+                [defaultValue]="userDetail.preferredCurrency"
+                (selected)="valueChanged($event, userProfileCodeType.CurrencyType)"
+            ></ksc-select-picker>
+            <span *ngIf="!editMode">
+                {{preferredCurrencyText}}
+            </span>
+        </div>
+    </div>
+    <div class="form-group row spbrow data-pointer-row">
+        <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4">
+            <label class="datafabric-font-style">{{'NATURAL_PERSON_PAGE_RESULTS'|translate}}</label>
+        </div>
+        <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+            <ksc-select-picker *ngIf="editMode && options"
+                [options]="selectOptions"
+                [data]="options[userProfileCodeType.PageSizeDefault]"
+                [defaultValue]="userDetail.preferredPageSize"
+                (selected)="valueChanged($event, userProfileCodeType.PageSizeDefault)"
+                [allowClear]="false"
+            ></ksc-select-picker>
+            <span *ngIf="!editMode">
+                {{preferredPageSizeText}}
+            </span>
+        </div>
+    </div>
+</div>

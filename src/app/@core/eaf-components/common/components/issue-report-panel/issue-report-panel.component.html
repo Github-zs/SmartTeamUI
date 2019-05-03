@@ -1,0 +1,23 @@
+<div class="panel-background">
+  <ng-container *ngIf="!issueMessageContentTemplate">
+    <h1 class="title-style">{{title}}</h1>
+    <p class="error-message-style">{{message}}</p>
+    <p class="action-intro-style">Please email support or return to the Dashboard</p>
+  </ng-container>
+  <ng-template
+    [ngIf]="issueMessageContentTemplate"
+    [ngTemplateOutlet]="issueMessageContentTemplate">
+  </ng-template>
+  <ng-container *ngIf="!issueReportActionToolbarTemplate">
+    <div>
+      <button class="issue-report-panel-button" *ngFor="let action of issueReportActions" title="{{ action.name }}" (click)="dealActionsClick(action)">
+        <i class="{{ action.iconClass }}"></i>
+        {{ action.name }}
+      </button>
+    </div>
+  </ng-container>
+  <ng-template
+    [ngIf]="issueReportActionToolbarTemplate"
+    [ngTemplateOutlet]="issueReportActionToolbarTemplate">
+  </ng-template>
+</div>

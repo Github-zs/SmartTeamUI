@@ -1,0 +1,38 @@
+$issue-report-panel-button-background: #426ab3!default;
+$issue-report-panel-button-color: #ffffff!default;
+.panel-background {
+    height: 100%;
+    padding-top: 5%;
+    text-align: center;
+}
+.title-style {
+    color: darkred;
+    font-family: sans-serif;
+    font-weight: 500;
+}
+.error-message-style {
+    font-size: 18px;
+    font-family: sans-serif;
+    font-weight: 500;
+}
+.action-intro-style {
+    font-size: 12px;
+    font-style: oblique;
+    font-weight: 300;
+}
+.issue-report-panel-button {
+    background-color: $issue-report-panel-button-background;
+    color: $issue-report-panel-button-color;
+    font-weight: bold;
+    width: 7vw;
+    padding: 12px;
+    margin-left: 15px;
+    border: 0;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 14px;
+}

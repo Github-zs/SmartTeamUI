@@ -1,0 +1,78 @@
+/**
+ * Created Date: Monday, November 27th 2017, 01:57:11 am
+ * Author: KSC
+ * Copyright (c) 2017 Kingland System Corporation. All Rights Reserved
+ */
+ .datafab-details-content {
+  padding: 0px;
+  background-color: #F4F0EB;
+}
+
+div.datafab-details-content {
+  div.datafab-editor-panel,
+  div.datafab-details-sidebar {
+    padding: 2px 6px;
+    border: 1px solid #8CB8C6;
+  }
+}
+
+.datafab-details-sidebar {
+  border: 1px solid #8CB8C6;
+  padding-left: 2px;
+  padding-right: 2px;
+  height: 100%;
+  overflow-y: auto;
+}
+
+@media (max-width: 767px) {
+  .datafab-editor-panel,
+  .datafab-details-sidebar {
+    height: auto !important;
+    background-color: #F4F0EB;
+  }
+}
+
+div.datafab-details-content{
+    height: calc(100vh - 150px);
+}
+
+.config-content div.datafab-details-sidebar,
+.config-content div.datafab-editor-panel {
+    height: 100%;
+}
+
+.hover-default-pic-icon {
+  line-height: 1.2em !important;
+  font-size: 10em !important;
+}
+
+.user-popover .pop-hover-pic {
+  display: flex;
+  justify-content: space-around;
+}
+
+table.dataTable.no-footer {
+  border-bottom: none !important;
+}
+
+.spbrow {
+    margin-top: 15px;
+}
+
+.datafab-details-sidebar {
+    .search-input-container {
+        padding: 6px;
+    }
+}
+
+profile-card {
+    position: fixed
+}
+.user-profile-popover{
+    position:fixed;
+    height:300px;
+    width:300px;
+    z-index:9999;
+    background-color: #fff;
+    box-shadow: 3px 3px 3px #888888;
+}

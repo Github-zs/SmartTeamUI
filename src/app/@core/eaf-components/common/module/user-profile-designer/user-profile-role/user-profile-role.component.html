@@ -1,0 +1,19 @@
+<div class="profile-info-body" id="roleTabBody">
+    <div class="form-group row spbrow data-pointer-row">
+        <ul class="list-unstyled role-list">
+            <li *ngFor="let role of user.roleList | orderBy:'roleName'">
+                <span [hidden]="role.isSystemRole">
+                    <i *ngIf="editMode && canPersistUser && canEdit" class="fa fa-minus-circle" title="Remove" confirm-modal
+                    [title]="'Remove Role'"
+                    [content]="'This action will remove the role from the user. Are you sure you wish to continue?'"
+                    (confirmResult)="removeRole($event, role)"
+                    ></i>&nbsp;&nbsp;&nbsp;&nbsp;<span>{{role.roleName}}</span>
+                    <span *ngIf="role.locationTypeCode">,&nbsp;{{getLocationNameByCode(role.locationTypeCode)}}</span>
+                </span>
+            </li>
+            <li *ngIf="editMode && canPersistUser && canEdit">
+                <i class="fa fa-plus-circle" (click)="openRoleModal()"></i>&nbsp;&nbsp;&nbsp;&nbsp;<span>{{'GROUP_MANAGEMENT_ADD_NEW_ROLE' | translate}}</span>
+            </li>
+        </ul>
+    </div>
+</div>

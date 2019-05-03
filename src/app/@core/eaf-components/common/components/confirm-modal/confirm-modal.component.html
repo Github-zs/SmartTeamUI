@@ -1,0 +1,21 @@
+<div class="modal-header" *ngIf="title">
+    <div class="modal-title caption-subject datafab-h6 datafab-font-regular">
+        {{title}}
+    </div>
+    <div class="col-md-3">
+
+    </div>
+</div>
+<div class="modal-body">
+    <div class="row" style="max-height:500px;overflow-y:auto">
+        <div class="col-xs-12"><p>{{content}}</p></div>
+    </div>
+</div>
+<div class="modal-footer">
+    <div class="row spbrow">
+        <div class="col-xs-12 datafabric-btns-container text-right">
+            <button class="btn datafab-btn-primary" (click)="confirm()">{{'WORKFLOW_MANAGEMENT_OK' | translate}}</button>
+            <button class="btn datafab-btn-secondary" (click)="decline()">{{'WORKFLOW_MANAGEMENT_CANCEL' | translate}}</button>
+        </div>
+    </div>
+</div>

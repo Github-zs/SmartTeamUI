@@ -95,6 +95,7 @@
     "@types/jasminewd2": "2.0.3",
     "@types/leaflet": "1.2.3",
     "@types/node": "6.0.90",
+    "@types/lodash": "^4.14.123",
     "codelyzer": "^4.5.0",
     "conventional-changelog-cli": "1.3.4",
     "husky": "0.13.3",

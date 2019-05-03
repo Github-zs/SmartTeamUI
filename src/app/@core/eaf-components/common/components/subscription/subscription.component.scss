@@ -1,0 +1,15 @@
+@import "../../../../common/scss/default-variables.scss";
+
+select:required:invalid {
+    font-family: $global-font-family;
+    font-style: italic;
+    color: #C4C4C4;
+}
+option {
+    font-family: $global-font-family;
+    font-style: normal;
+    color: #333333;
+}
+.valid {
+    color: #A9A39B;
+}

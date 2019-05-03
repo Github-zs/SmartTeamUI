@@ -1,0 +1,11 @@
+    <div class="row spbrow">
+        <div  class="col-xs-12" style="max-height:500px;overflow-y:auto">
+            <div class="row">
+                <div class="col-xs-12" *ngFor="let group of groupList.value | individualColumnSort: 'groupName': 'asc'">
+                    <div>
+                        <span class="datafabric-font-style">{{group['groupName']}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>

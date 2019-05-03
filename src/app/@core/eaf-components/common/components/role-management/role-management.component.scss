@@ -1,0 +1,114 @@
+/**
+ * Created Date: Tuesday, December 19th 2017, 01:34:13 am
+ * Author: KSC
+ * Copyright (c) 2018 Kingland System Corporation. All Rights Reserved
+ */
+
+#role-management .nav-tabs > li {
+    padding: 0 4px 0 0;
+    margin: 0 4px 0 0;
+}
+
+#role-management .nav-tabs > li > a {
+    font-size: 12px !important;
+}
+
+
+#role-management .nav-tabs > li.active > a,
+#role-management .nav-tabs > li:hover > a,
+#role-management .nav-tabs > li:focus > a {
+    color: #000;
+    cursor: pointer;
+    background: 0 0 !important;
+    border-bottom: 4px solid #9fe4ea !important;
+    border-top: 0 !important;
+    border-left: 0 !important;
+    border-right: 0 !important;
+}
+
+.tab-font {
+  font-size: 13px;
+}
+
+.active-role{
+  font-weight: bold;
+  cursor:pointer;
+  white-space: normal !important;
+}
+
+.user-popover{
+  position:absolute;
+  top:30%;
+  left:50%;
+  height:300px;
+  width:300px;
+  margin-left:-50px;
+  margin-top:-50px;
+  z-index:9999;
+  background-color: #fff;
+  box-shadow: 3px 3px 3px #888888;
+}
+
+
+#role-management table.dataTable.order-column, #role-management table.dataTable.order-column.display{
+     tbody {
+        tr {
+            cursor: pointer;
+        }
+        tr > .sorting_1 {
+            background: inherit;
+        }
+
+        tr>.sorting_2 {
+            background: inherit;
+        }
+
+        tr>.sorting_3 {
+            background: inherit;
+        }
+
+    }
+}
+
+#role-management {
+    .margin-left-6 {
+        margin-left: 6px;
+    }
+    .margin-right-6 {
+        margin-right: 6px;
+    }
+    .margin-bottom-6 {
+        margin-bottom: 6px;
+    }
+    .margin-top-6 {
+        margin-top: 6px;
+    }
+    .datafab-editor-panel, .datafab-details-sidebar {
+        overflow-y: auto;
+    }
+    .dataTables_scrollHead {
+        tr {
+            th {
+                text-align: center;
+            }
+        }
+    }
+    .datafab-items-table {
+        table-layout: fixed;
+        tr {
+            td {
+                white-space: normal;
+            }
+            td.active-role {
+                font-weight: bold;
+            }
+        }
+    }
+
+    .vertical-button-group {
+        float: left;
+        .btn {
+            margin: 6px 0px 0px 0px !important;
+        }
+    }
+}
