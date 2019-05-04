@@ -1,0 +1,31 @@
+<nb-card>
+  <nb-card-header>
+    <div class="action">
+      <button class="btn btn-hero-warning float-right" (click)="cancel()">取消</button>
+      <button class="btn btn-hero-primary float-right">提交</button>
+    </div>
+    <div class="form-group col-sm-4">
+      <label>标题:</label>
+      <input type="text" class="form-control" placeholder="请输入任务标题">
+    </div>
+  </nb-card-header>
+  <nb-card-body>
+    <div class="form-group col-sm-4">
+      <label>来源:</label>
+      <input type="text" class="form-control" placeholder="请输入在何处产生该任务">
+    </div>
+    <div class="form-group col-sm-4">
+      <label>执行人:</label>
+      <nb-select placeholder="选择执行人">
+        <nb-option value="1">option1</nb-option>
+        <nb-option value="2">option2</nb-option>
+        <nb-option value="3">option3</nb-option>
+        <nb-option value="4">option4</nb-option>
+      </nb-select>
+    </div>
+    <div class="form-group col-sm-12">
+      <label>描述:</label>
+      <ngx-ckeditor></ngx-ckeditor>
+    </div>
+  </nb-card-body>
+</nb-card>

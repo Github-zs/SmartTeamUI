@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'ngx-all-task-page',
@@ -30,9 +31,13 @@ export class AllTaskPageComponent implements OnInit {
     },
   ];
 
-  constructor() { }
+  constructor(private route: Router) { }
 
   ngOnInit() {
+  }
+
+  add() {
+    this.route.navigate(['/pages/all-task-management/add-task-page']);
   }
 
 }

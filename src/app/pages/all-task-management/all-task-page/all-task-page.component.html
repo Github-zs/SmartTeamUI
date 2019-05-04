@@ -1,6 +1,7 @@
 <nb-card>
   <nb-card-header>
-    All Task
+    所有任务
+    <button class="btn btn-hero-primary float-right" (click)="add()">新建</button>
   </nb-card-header>
   <nb-list>
     <nb-list-item *ngFor="let task of tasks">
