@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {TaskHttpService} from '../../../common/service/task-http.service';
 
 @Component({
   selector: 'ngx-add-task-page',
@@ -18,6 +19,7 @@ export class AddTaskPageComponent implements OnInit {
 
   constructor(
     private fb: FormBuilder,
+    private service: TaskHttpService,
   ) { }
 
   ngOnInit() {
@@ -46,7 +48,22 @@ export class AddTaskPageComponent implements OnInit {
   }
 
   save() {
-    console.log(this.taskForm.value);
+    const taskManagementModel = {
+      taskTitle: this.taskForm.value.title,
+      taskSource: this.taskForm.value.source,
+      taskDescription: this.description,
+      taskExecutor: this.taskForm.value.executor,
+    };
+
+    const taskGroupExtModel = {
+      groupBelonged: this.taskForm.value.group,
+    };
+
+    this.service.insert(taskManagementModel).subscribe( data => {
+      this.service.updateTaskExt(taskGroupExtModel).subscribe( res => {
+
+      });
+    });
   }
 
   cancel() {
