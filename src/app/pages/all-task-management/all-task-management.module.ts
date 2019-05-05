@@ -7,6 +7,7 @@ import { AddTaskPageComponent } from './add-task-page/add-task-page.component';
 import {EditorsModule} from '../../common/component/editors/editors.module';
 import {NbSelectModule} from '@nebular/theme';
 import { TaskDetailPageComponent } from './task-detail-page/task-detail-page.component';
+import {CKEditorModule} from 'ng2-ckeditor';
 
 @NgModule({
   imports: [
@@ -15,6 +16,7 @@ import { TaskDetailPageComponent } from './task-detail-page/task-detail-page.com
     AllTaskManagementRoutingModule,
     EditorsModule,
     NbSelectModule,
+    CKEditorModule,
   ],
   declarations: [AllTaskManagementComponent, AddTaskPageComponent, TaskDetailPageComponent],
 })

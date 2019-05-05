@@ -7,6 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TaskDetailPageComponent implements OnInit {
 
+  public disabled: boolean = true;
+
+  public editConfig: any = {
+    language: 'zh-cn',
+  };
+
   constructor() { }
 
   ngOnInit() {
