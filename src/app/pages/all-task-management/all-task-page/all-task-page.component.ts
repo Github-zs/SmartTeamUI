@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
-
+import {TaskHttpService} from '../../../common/service/task-http.service';
+import * as _ from 'lodash';
 @Component({
   selector: 'ngx-all-task-page',
   templateUrl: './all-task-page.component.html',
@@ -8,32 +9,21 @@ import {Router} from '@angular/router';
 })
 export class AllTaskPageComponent implements OnInit {
 
-  public tasks: Array<any> = [
-    {
-      title: 'Test1',
-      group: 'EHM',
-      url: 'EHM-10',
-    },
-    {
-      title: 'Test2',
-      group: 'QC',
-      url: 'EHM-11',
-    },
-    {
-      title: 'Test3',
-      group: 'Korgor',
-      url: 'EHM-12',
-    },
-    {
-      title: 'Test4',
-      group: 'Support',
-      url: 'EHM-13',
-    },
-  ];
+  public tasks: Array<any> = [];
 
-  constructor(private route: Router) { }
+  constructor(
+    private route: Router,
+    private service: TaskHttpService,
+    ) { }
 
   ngOnInit() {
+    this.initData();
+  }
+
+  initData() {
+    this.service.selectAllTaskUrl().subscribe( data => {
+      this.tasks = data;
+    });
   }
 
   add() {

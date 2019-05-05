@@ -6,6 +6,7 @@ import {AllTaskPageComponent} from './all-task-page.component';
 import {NbListModule} from '@nebular/theme';
 import {CKEditorModule} from 'ng2-ckeditor';
 import {EditorsModule} from '../../../common/component/editors/editors.module';
+import {TaskHttpService} from '../../../common/service/task-http.service';
 
 @NgModule({
   imports: [
@@ -17,6 +18,7 @@ import {EditorsModule} from '../../../common/component/editors/editors.module';
     EditorsModule,
   ],
   declarations: [AllTaskPageComponent],
+  providers: [TaskHttpService],
 })
 export class AllTaskPageModule {
 

@@ -1,34 +1,34 @@
-<nb-card>
+<nb-card *ngIf="taskModel">
   <nb-card-header>
     <div class="row">
       <i class="nb-arrow-left float-left task-icon" (click)="cancel()"></i>
     </div>
     <br>
-    <div class="row form-group">
-      <h1>任务标题</h1>
+    <div class="form-group">
+      <h1>{{taskModel.taskTitle}}</h1>
     </div>
     <i class="nb-edit float-right task-icon"></i>
   </nb-card-header>
   <nb-card-body>
     <div class="form-group">
       <label>来源:</label>
-      <span></span>
+      <span>{{taskModel.taskSource}}</span>
     </div>
     <div class="form-group">
       <label>执行人:</label>
-      <span></span>
+      <span>{{taskModel.taskExecutor}}</span>
     </div>
     <div class="form-group">
       <label>报告人:</label>
-      <span></span>
+      <span>{{taskModel.taskReporter}}</span>
     </div>
     <div class="form-group">
       <label>状态:</label>
-      <span></span>
+      <span>{{taskModel.taskStatus}}</span>
     </div>
     <div class="form-group">
       <label>描述:</label>
-      <ckeditor [readonly]="disabled" [config]="editConfig"></ckeditor>
+      <ckeditor [value]="taskModel.taskDescription" [readonly]="disabled" [config]="editConfig"></ckeditor>
     </div>
   </nb-card-body>
 </nb-card>

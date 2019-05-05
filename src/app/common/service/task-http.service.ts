@@ -22,4 +22,12 @@ export class TaskHttpService {
     return this.http.post('/updateTaskExt', taskGroupExtModel, this.httpOptions);
   }
 
+  selectAllTaskUrl(): Observable<any> {
+    return this.http.get('/selectAllTaskUrl');
+  }
+
+  selectTaskById(taskId): Observable<any> {
+    return this.http.get('/selectTaskById', {params: {taskId: taskId}});
+  }
+
 }

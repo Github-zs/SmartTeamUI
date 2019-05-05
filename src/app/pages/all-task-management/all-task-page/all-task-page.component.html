@@ -5,7 +5,7 @@
   </nb-card-header>
   <nb-list>
     <nb-list-item *ngFor="let task of tasks">
-      <a routerLink="/pages/all-task-management/task-detail-page">{{ task.url }} {{ task.title }}</a>
+      <a routerLink="/pages/all-task-management/task-detail-page" [queryParams]="{taskId: task.taskBelonged}">{{ task.taskUrl }}</a>
     </nb-list-item>
   </nb-list>
 </nb-card>
