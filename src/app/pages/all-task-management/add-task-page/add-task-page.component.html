@@ -18,19 +18,13 @@
       <div class="form-group col-sm-4">
         <label>任务所属:</label>
         <nb-select formControlName="group" placeholder="选择任务所属组">
-          <nb-option value="1">option1</nb-option>
-          <nb-option value="2">option2</nb-option>
-          <nb-option value="3">option3</nb-option>
-          <nb-option value="4">option4</nb-option>
+          <nb-option *ngFor="let group of groupList" [value]="group.groupId">{{group.groupName}}</nb-option>
         </nb-select>
       </div>
       <div class="form-group col-sm-4">
         <label>执行人:</label>
         <nb-select formControlName="executor" placeholder="选择执行人">
-          <nb-option value="1">option1</nb-option>
-          <nb-option value="2">option2</nb-option>
-          <nb-option value="3">option3</nb-option>
-          <nb-option value="4">option4</nb-option>
+          <nb-option *ngFor="let user of userList" [value]="user.userId">{{user.userName}}</nb-option>
         </nb-select>
       </div>
       <div class="form-group col-sm-12">

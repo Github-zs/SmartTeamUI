@@ -9,6 +9,8 @@ import {NbSelectModule} from '@nebular/theme';
 import { TaskDetailPageComponent } from './task-detail-page/task-detail-page.component';
 import {CKEditorModule} from 'ng2-ckeditor';
 import {TaskHttpService} from '../../common/service/task-http.service';
+import {GroupHttpService} from '../../common/service/group-http.service';
+import {UserHttpService} from '../../common/service/user-http.service';
 
 @NgModule({
   imports: [
@@ -20,7 +22,7 @@ import {TaskHttpService} from '../../common/service/task-http.service';
     CKEditorModule,
   ],
   declarations: [AllTaskManagementComponent, AddTaskPageComponent, TaskDetailPageComponent],
-  providers: [TaskHttpService],
+  providers: [TaskHttpService, GroupHttpService, UserHttpService],
 })
 export class AllTaskManagementModule {
 

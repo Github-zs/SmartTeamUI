@@ -15,4 +15,8 @@ export class UserHttpService {
   selectByLoginName(loginName: string): Observable<any> {
     return this.http.get('userGetByLoginName?loginName=' + loginName);
   }
+
+  getUserById(userId): Observable<any> {
+    return this.http.get('getUserById', {params: {userId: userId}});
+  }
 }

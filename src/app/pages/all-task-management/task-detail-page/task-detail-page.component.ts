@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {TaskHttpService} from '../../../common/service/task-http.service';
+import {UserHttpService} from '../../../common/service/user-http.service';
 
 @Component({
   selector: 'ngx-task-detail-page',
@@ -15,6 +16,10 @@ export class TaskDetailPageComponent implements OnInit {
 
   public taskModel: any;
 
+  public executor: any;
+
+  public reporter: any;
+
   public editConfig: any = {
     language: 'zh-cn',
   };
@@ -22,6 +27,7 @@ export class TaskDetailPageComponent implements OnInit {
   constructor(
     private activeRoute: ActivatedRoute,
     private service: TaskHttpService,
+    private userService: UserHttpService,
   ) { }
 
   ngOnInit() {
@@ -32,6 +38,12 @@ export class TaskDetailPageComponent implements OnInit {
   getTaskDetail(taskId) {
     this.service.selectTaskById(taskId).subscribe( data => {
       this.taskModel = data;
+      this.userService.getUserById(data.taskExecutor).subscribe( executor => {
+        this.executor = executor;
+      });
+      this.userService.getUserById(data.taskReporter).subscribe( reporter => {
+        this.reporter = reporter;
+      });
     });
   }
 

@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {TaskHttpService} from '../../../common/service/task-http.service';
+import {GroupHttpService} from '../../../common/service/group-http.service';
+import {UserHttpService} from '../../../common/service/user-http.service';
 
 @Component({
   selector: 'ngx-add-task-page',
@@ -13,6 +15,10 @@ export class AddTaskPageComponent implements OnInit {
 
   public description: any;
 
+  public groupList: Array<any> = [];
+
+  public userList: Array<any> = [];
+
   public editConfig: any = {
     language: 'zh-cn',
   };
@@ -20,10 +26,26 @@ export class AddTaskPageComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private service: TaskHttpService,
+    private groupService: GroupHttpService,
+    private userService: UserHttpService,
   ) { }
 
   ngOnInit() {
     this.initForm();
+    this.getAllGroup();
+    this.getAllUser();
+  }
+
+  getAllGroup() {
+    this.groupService.selectAllGroup().subscribe( data => {
+      this.groupList = data;
+    });
+  }
+
+  getAllUser() {
+    this.userService.getAllUser().subscribe( data => {
+      this.userList = data;
+    });
   }
 
   initForm() {
