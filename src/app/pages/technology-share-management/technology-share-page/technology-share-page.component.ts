@@ -8,12 +8,6 @@ import {NewsService} from '../services/news.service';
 })
 export class TechnologySharePageComponent implements OnInit {
 
-  firstCard = {
-    news: [],
-    placeholders: [],
-    loading: false,
-    pageToLoadNext: 1,
-  };
   secondCard = {
     news: [],
     placeholders: [],
