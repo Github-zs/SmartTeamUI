@@ -39,4 +39,8 @@ export class UserHttpService {
     });
 
   }
+
+  getToken(username, password): Observable<any> {
+    return this.http.get(`/auth/token?username=${username}&password=${password}`);
+  }
 }

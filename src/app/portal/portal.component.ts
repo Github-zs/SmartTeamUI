@@ -9,11 +9,6 @@ import {Component} from '@angular/core';
       </nb-layout-column>
     </nb-layout>
   `,
-  styles: [`
-    :host ::ng-deep .layout {
-      background-color: #3e367e !important;
-    }
-  `],
 })
 export class PortalComponent {
 

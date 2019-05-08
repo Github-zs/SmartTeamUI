@@ -11,10 +11,10 @@ import {Router} from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-
-  credentials = {username: '', password: ''};
+  public userForm: FormGroup;
 
   constructor(
+    private fb: FormBuilder,
     private userService: UserHttpService,
     private route: Router,
   ) {
@@ -22,13 +22,30 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.initForm();
+  }
+
+  initForm() {
+    this.userForm = this.fb.group({
+      username: [
+        '',
+        [Validators.required],
+      ],
+      password: [
+        '',
+        [Validators.required],
+      ],
+    });
+  }
+  back() {
+    history.back();
   }
 
   login() {
-    this.userService.authenticate(this.credentials, (data) => {
-      this.route.navigateByUrl('pages');
+    const userInfo = this.userForm.value;
+    this.userService.getToken(userInfo.username, userInfo.password).subscribe( data => {
+      this.route.navigate(['/pages']);
     });
-    return false;
   }
 
 }
