@@ -5,6 +5,7 @@ import {PersonalSpaceManagementRoutingModule} from './personal-space-management-
 import {PersonalSpaceManagementComponent} from './personal-space-management.component';
 import { AddNotePageComponent } from './add-note-page/add-note-page.component';
 import {CKEditorModule} from 'ng2-ckeditor';
+import {NoteHttpService} from '../../common/service/note-http.service';
 
 @NgModule({
   imports: [
@@ -14,6 +15,7 @@ import {CKEditorModule} from 'ng2-ckeditor';
     PersonalSpaceManagementRoutingModule,
   ],
   declarations: [PersonalSpaceManagementComponent, AddNotePageComponent],
+  providers: [NoteHttpService],
 })
 export class PersonalSpaceManagementModule {
 

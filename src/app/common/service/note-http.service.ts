@@ -14,4 +14,8 @@ export class NoteHttpService {
   getAll(): Observable<any> {
     return this.http.get('/note/selectAll');
   }
+
+  insert(noteModel): Observable<any> {
+    return this.http.post('/note/add', noteModel, {headers: this.headers});
+  }
 }

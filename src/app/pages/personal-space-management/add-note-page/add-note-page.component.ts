@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {NoteHttpService} from '../../../common/service/note-http.service';
 
 @Component({
   selector: 'ngx-add-note-page',
@@ -12,11 +13,14 @@ export class AddNotePageComponent implements OnInit {
 
   private noteForm: FormGroup;
 
+  public noteModel: any;
+
   public editConfig: any = {
     language: 'zh-cn',
   };
   constructor(
     private fb: FormBuilder,
+    private noteService: NoteHttpService,
   ) { }
 
   ngOnInit() {
@@ -37,7 +41,14 @@ export class AddNotePageComponent implements OnInit {
   }
 
   save() {
+    this.noteModel = {
+      noteTitle: this.noteForm.value.title,
+      noteContent: this.description,
+    };
 
+    this.noteService.insert(this.noteModel).subscribe( data => {
+
+    });
   }
 
   change(event) {
