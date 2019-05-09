@@ -5,17 +5,21 @@ import {DocumentManagementRoutingModule} from './document-management-routing.mod
 import {DocumentManagementComponent} from './document-management.component';
 import { DesignManagementComponent } from './design-management/design-management.component';
 import { RequirementManagementComponent } from './requirement-management/requirement-management.component';
+import { AddDesignPageComponent } from './design-management/add-design-page/add-design-page.component';
+import {CKEditorModule} from 'ng2-ckeditor';
 
 @NgModule({
   imports: [
     ThemeModule,
     CommonModule,
+    CKEditorModule,
     DocumentManagementRoutingModule,
   ],
   declarations: [
     DocumentManagementComponent,
     DesignManagementComponent,
     RequirementManagementComponent,
+    AddDesignPageComponent,
   ],
 })
 export class DocumentManagementModule {
