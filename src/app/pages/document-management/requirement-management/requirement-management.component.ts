@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RequirementManagementComponent implements OnInit {
 
+  private requirementList: Array<any>;
+
   constructor() { }
 
   ngOnInit() {

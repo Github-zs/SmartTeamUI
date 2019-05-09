@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DesignManagementComponent implements OnInit {
 
+  private designList: Array<any>;
+
   constructor() { }
 
   ngOnInit() {

@@ -1,3 +1,11 @@
-<p>
-  design-management works!
-</p>
+<nb-card>
+  <nb-card-header>
+    文档列表
+    <button class="btn btn-hero-primary float-right" >新建</button>
+  </nb-card-header>
+  <nb-list>
+    <nb-list-item *ngFor="let design of designList">
+      <a routerLink="/pages/all-task-management/task-detail-page" [queryParams]="{taskId: design.designId}">{{ design.designTitle }}</a>
+    </nb-list-item>
+  </nb-list>
+</nb-card>
