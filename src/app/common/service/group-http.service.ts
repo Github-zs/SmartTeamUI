@@ -5,10 +5,6 @@ import {Observable} from 'rxjs';
 @Injectable()
 export class GroupHttpService {
 
-  httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json;application/x-www-form-urlencodeed; charset=utf-8'}),
-  };
-
   headers = new HttpHeaders({authorization : 'Bearer ' + localStorage.getItem('token')});
 
   constructor(
@@ -16,6 +12,6 @@ export class GroupHttpService {
   ) {}
 
   selectAllGroup(): Observable<any> {
-    return this.http.get('selectAllGroup');
+    return this.http.get('selectAllGroup', {headers: this.headers});
   }
 }

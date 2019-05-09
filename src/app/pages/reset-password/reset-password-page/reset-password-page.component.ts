@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import * as _ from 'lodash';
-import {passwordMatcherValidator} from '../../../@core/eaf-components/common/form-validation/password-matcher.validator';
+import {
+  passwordMatcherValidator
+} from '../../../@core/eaf-components/common/form-validation/password-matcher.validator';
 import {UserHttpService} from '../../../common/service/user-http.service';
 
 @Component({
@@ -43,15 +45,12 @@ export class ResetPasswordPageComponent implements OnInit {
 
   checkOldPassword() {
     this.service.selectByLoginName('test1').subscribe( data => {
-      console.log(data);
     });
   }
 
   save() {
     this.service.getAllUser().subscribe( data => {
-      console.log(data);
     });
-    console.log(this.passwordForm.value);
   }
 
   cancel() {

@@ -5,10 +5,6 @@ import {Observable} from 'rxjs';
 @Injectable()
 export class TaskHttpService {
 
-  httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json;application/x-www-form-urlencodeed; charset=utf-8'}),
-  };
-
   headers = new HttpHeaders({authorization : 'Bearer ' + localStorage.getItem('token')});
 
   constructor(
@@ -16,11 +12,11 @@ export class TaskHttpService {
   ) {}
 
   insert(taskManagementModel): Observable<any> {
-    return this.http.post('/addTask', taskManagementModel, this.httpOptions);
+    return this.http.post('/addTask', taskManagementModel, {headers: this.headers});
   }
 
   updateTaskExt(taskGroupExtModel): Observable<any> {
-    return this.http.post('/updateTaskExt', taskGroupExtModel, this.httpOptions);
+    return this.http.post('/updateTaskExt', taskGroupExtModel, {headers: this.headers});
   }
 
   selectAllTaskUrl(): Observable<any> {
@@ -28,7 +24,7 @@ export class TaskHttpService {
   }
 
   selectTaskById(taskId): Observable<any> {
-    return this.http.get('/selectTaskById', {params: {taskId: taskId}});
+    return this.http.get('/selectTaskById', {params: {taskId: taskId}, headers: this.headers});
   }
 
 }

@@ -4,10 +4,6 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 @Injectable()
 export class DesignHttpService {
 
-  httpOptions = {
-    headers: new HttpHeaders({ 'Content-Type': 'application/json;application/x-www-form-urlencodeed; charset=utf-8'}),
-  };
-
   headers = new HttpHeaders({authorization : 'Bearer ' + localStorage.getItem('token')});
 
   constructor(

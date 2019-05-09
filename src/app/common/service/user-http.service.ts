@@ -20,7 +20,7 @@ export class UserHttpService {
   }
 
   getUserById(userId): Observable<any> {
-    return this.http.get('getUserById', {params: {userId: userId}});
+    return this.http.get('getUserById', {params: {userId: userId}, headers: this.headers});
   }
 
   getToken(username, password): Observable<any> {
