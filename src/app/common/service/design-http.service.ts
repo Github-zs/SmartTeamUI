@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {Observable} from 'rxjs';
 
 @Injectable()
 export class DesignHttpService {
@@ -9,4 +10,12 @@ export class DesignHttpService {
   constructor(
     private http: HttpClient,
   ) {}
+
+  getAll(): Observable<any> {
+    return this.http.get('/design/getAll', {headers: this.headers});
+  }
+
+  insert(designModel): Observable<any> {
+    return this.http.post('/design/add', designModel, {headers: this.headers});
+  }
 }

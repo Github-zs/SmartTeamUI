@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
+import {DesignHttpService} from '../../../common/service/design-http.service';
 
 @Component({
   selector: 'ngx-design-management',
@@ -12,9 +13,17 @@ export class DesignManagementComponent implements OnInit {
 
   constructor(
     private router: Router,
+    private service: DesignHttpService,
   ) { }
 
   ngOnInit() {
+    this.getAll();
+  }
+
+  getAll() {
+    this.service.getAll().subscribe( data => {
+      this.designList = data;
+    });
   }
 
   add() {

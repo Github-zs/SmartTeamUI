@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
+import {RequirementHttpService} from '../../../common/service/requirement-http.service';
 
 @Component({
   selector: 'ngx-requirement-management',
@@ -12,9 +13,17 @@ export class RequirementManagementComponent implements OnInit {
 
   constructor(
     private router: Router,
+    private service: RequirementHttpService,
   ) { }
 
   ngOnInit() {
+    this.getAll();
+  }
+
+  getAll() {
+    this.service.getAll().subscribe( data => {
+      this.requirementList = data;
+    });
   }
 
   add() {

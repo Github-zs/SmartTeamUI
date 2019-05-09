@@ -7,7 +7,11 @@ import { DesignManagementComponent } from './design-management/design-management
 import { RequirementManagementComponent } from './requirement-management/requirement-management.component';
 import { AddDesignPageComponent } from './design-management/add-design-page/add-design-page.component';
 import {CKEditorModule} from 'ng2-ckeditor';
-import { AddRequirementPageComponent } from './requirement-management/add-requirement-page/add-requirement-page.component';
+import {
+  AddRequirementPageComponent
+} from './requirement-management/add-requirement-page/add-requirement-page.component';
+import {DesignHttpService} from '../../common/service/design-http.service';
+import {RequirementHttpService} from '../../common/service/requirement-http.service';
 
 @NgModule({
   imports: [
@@ -23,6 +27,7 @@ import { AddRequirementPageComponent } from './requirement-management/add-requir
     AddDesignPageComponent,
     AddRequirementPageComponent,
   ],
+  providers: [DesignHttpService, RequirementHttpService],
 })
 export class DocumentManagementModule {
 

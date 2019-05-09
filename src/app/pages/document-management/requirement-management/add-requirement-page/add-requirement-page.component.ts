@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {Router} from '@angular/router';
+import {RequirementHttpService} from '../../../../common/service/requirement-http.service';
 
 @Component({
   selector: 'ngx-add-requirement-page',
@@ -9,15 +10,20 @@ import {Router} from '@angular/router';
 })
 export class AddRequirementPageComponent implements OnInit {
 
-  public requirementForm: FormGroup;
+  private requirementForm: FormGroup;
 
-  public description: string;
-  public editConfig: any = {
+  private description: string;
+
+  private requirementModel: any;
+
+  private editConfig: any = {
     language: 'zh-cn',
   };
 
   constructor(
     private fb: FormBuilder,
+    private service: RequirementHttpService,
+    private router: Router,
   ) { }
 
   ngOnInit() {
@@ -34,7 +40,13 @@ export class AddRequirementPageComponent implements OnInit {
   }
 
   save() {
-
+    this.requirementModel = {
+      requirementTitle: this.requirementForm.value.title,
+      requirementContent: this.description,
+    };
+    this.service.insert(this.requirementModel).subscribe( data => {
+      this.router.navigate(['/pages/document-management/requirement-management']);
+    });
   }
 
   cancel() {
