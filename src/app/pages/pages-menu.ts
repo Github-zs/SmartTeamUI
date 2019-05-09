@@ -18,11 +18,11 @@ export const MENU_ITEMS: NbMenuItem[] = [
     children: [
       {
         title: '需求文档',
-        link: '',
+        link: '/pages/document-management/requirement-management',
       },
       {
         title: '设计文档',
-        link: '',
+        link: '/pages/document-management/design-management',
       },
     ],
   },

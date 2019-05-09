@@ -26,6 +26,10 @@ const routes: Routes = [{
       path: 'all-task-management',
       loadChildren: './all-task-management/all-task-management.module#AllTaskManagementModule',
     },
+    {
+      path: 'document-management',
+      loadChildren: './document-management/document-management.module#DocumentManagementModule',
+    },
   ],
 }];
 
