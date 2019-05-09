@@ -12,7 +12,7 @@ export class UserHttpService {
   ) {}
 
   getAllUser(): Observable<any> {
-    return this.http.get('userGetAll');
+    return this.http.get('userGetAll', {headers: this.headers});
   }
 
   selectByLoginName(loginName: string): Observable<any> {
