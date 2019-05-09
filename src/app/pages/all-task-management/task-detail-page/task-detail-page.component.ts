@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {TaskHttpService} from '../../../common/service/task-http.service';
 import {UserHttpService} from '../../../common/service/user-http.service';
+import {UserModel} from '../../../common/model/user.model';
 
 @Component({
   selector: 'ngx-task-detail-page',
@@ -16,9 +17,9 @@ export class TaskDetailPageComponent implements OnInit {
 
   public taskModel: any;
 
-  public executor: any;
+  public executor: UserModel = new UserModel();
 
-  public reporter: any;
+  public reporter: UserModel = new UserModel();
 
   public editConfig: any = {
     language: 'zh-cn',
