@@ -12,7 +12,7 @@ export class NoteHttpService {
   ) {}
 
   getAll(): Observable<any> {
-    return this.http.get('/note/selectAll');
+    return this.http.get('/note/selectAll', {headers: this.headers});
   }
 
   insert(noteModel): Observable<any> {

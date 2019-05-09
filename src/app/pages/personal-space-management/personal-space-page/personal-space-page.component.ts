@@ -16,6 +16,7 @@ export class PersonalSpacePageComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.getAll();
   }
 
   getAll() {

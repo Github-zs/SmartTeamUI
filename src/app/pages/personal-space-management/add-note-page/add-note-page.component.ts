@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {NoteHttpService} from '../../../common/service/note-http.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'ngx-add-note-page',
@@ -21,6 +22,7 @@ export class AddNotePageComponent implements OnInit {
   constructor(
     private fb: FormBuilder,
     private noteService: NoteHttpService,
+    private router: Router,
   ) { }
 
   ngOnInit() {
@@ -47,7 +49,7 @@ export class AddNotePageComponent implements OnInit {
     };
 
     this.noteService.insert(this.noteModel).subscribe( data => {
-
+      this.router.navigate(['/pages/personal-space-management/personal-space-page']);
     });
   }
 
