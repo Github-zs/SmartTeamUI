@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'ngx-requirement-management',
@@ -9,9 +10,14 @@ export class RequirementManagementComponent implements OnInit {
 
   private requirementList: Array<any>;
 
-  constructor() { }
+  constructor(
+    private router: Router,
+  ) { }
 
   ngOnInit() {
   }
 
+  add() {
+    this.router.navigate(['/pages/document-management/add-requirement-page']);
+  }
 }

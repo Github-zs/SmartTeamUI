@@ -4,6 +4,9 @@ import {DocumentManagementComponent} from './document-management.component';
 import {DesignManagementComponent} from './design-management/design-management.component';
 import {RequirementManagementComponent} from './requirement-management/requirement-management.component';
 import {AddDesignPageComponent} from './design-management/add-design-page/add-design-page.component';
+import {
+  AddRequirementPageComponent,
+} from './requirement-management/add-requirement-page/add-requirement-page.component';
 
 const routes: Routes = [
   {
@@ -21,6 +24,10 @@ const routes: Routes = [
       {
         path: 'add-design-page',
         component: AddDesignPageComponent,
+      },
+      {
+        path: 'add-requirement-page',
+        component: AddRequirementPageComponent,
       },
     ],
   },

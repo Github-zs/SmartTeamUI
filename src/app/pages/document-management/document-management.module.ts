@@ -7,6 +7,7 @@ import { DesignManagementComponent } from './design-management/design-management
 import { RequirementManagementComponent } from './requirement-management/requirement-management.component';
 import { AddDesignPageComponent } from './design-management/add-design-page/add-design-page.component';
 import {CKEditorModule} from 'ng2-ckeditor';
+import { AddRequirementPageComponent } from './requirement-management/add-requirement-page/add-requirement-page.component';
 
 @NgModule({
   imports: [
@@ -20,6 +21,7 @@ import {CKEditorModule} from 'ng2-ckeditor';
     DesignManagementComponent,
     RequirementManagementComponent,
     AddDesignPageComponent,
+    AddRequirementPageComponent,
   ],
 })
 export class DocumentManagementModule {
