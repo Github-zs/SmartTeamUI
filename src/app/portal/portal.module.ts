@@ -7,6 +7,7 @@ import {FormsModule} from '@angular/forms';
 import {NbAuthModule} from '@nebular/auth';
 import {NbInputModule} from '@nebular/theme';
 import { RegisterComponent } from './register/register.component';
+import {ModalModule} from 'ngx-bootstrap';
 
 @NgModule({
   imports: [
@@ -14,6 +15,7 @@ import { RegisterComponent } from './register/register.component';
     CommonModule,
     PortalRoutingModule,
     FormsModule,
+    ModalModule.forRoot(),
     NbAuthModule,
     NbInputModule,
   ],
