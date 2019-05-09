@@ -2,6 +2,8 @@ import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {UserHttpService} from '../../common/service/user-http.service';
 import {Router} from '@angular/router';
+import {BsModalRef, BsModalService} from 'ngx-bootstrap';
+import {RegisterComponent} from '../register/register.component';
 
 @Component({
   selector: 'ngx-login-component',
@@ -13,10 +15,22 @@ export class LoginComponent implements OnInit {
 
   public userForm: FormGroup;
 
+  public bsRef: BsModalRef;
+
+
+  config = {
+    animated: true,
+    keyboard: false,
+    backdrop: true,
+    ignoreBackdropClick: true,
+    class: 'modal-lg',
+  };
+
   constructor(
     private fb: FormBuilder,
     private userService: UserHttpService,
     private route: Router,
+    private bsService: BsModalService,
   ) {
 
   }
@@ -47,6 +61,10 @@ export class LoginComponent implements OnInit {
       localStorage.setItem('token', data['token']);
       this.route.navigate(['/pages']);
     });
+  }
+
+  register() {
+    this.bsRef = this.bsService.show(RegisterComponent, this.config);
   }
 
 }

@@ -10,19 +10,26 @@
     <nb-auth-block style="margin: auto;text-align: center;">
       <h1>登录</h1>
       <p>欢迎使用SmartTeam！工作愉快！</p>
-      <form [formGroup]="userForm">
+      <form [formGroup]="userForm" style="text-align: left;">
         <div class="form-group">
           <label class="float-left">用户名:</label>
           <input formControlName="username" type="text" nbInput fullWidth shape="semi-round" placeholder="请输入用户名">
+          <span class="has-error" *ngIf="userForm.get('username').touched && userForm.get('username').hasError('required')">用户名不能为空</span>
         </div>
         <div class="form-group">
           <label class="float-left">密码:</label>
           <input formControlName="password" type="password" nbInput fullWidth shape="semi-round" placeholder="请输入密码">
+          <span class="has-error" *ngIf="userForm.get('password').touched && userForm.get('password').hasError('required')">密码不能为空</span>
         </div>
         <div class="form-group">
-          <a style="color: #a4abb3;line-height: 50px;font-size: 16px;" class="forgot-password float-right" routerlink="../request-password" href="/ngx-admin/auth/request-password">重置密码</a>
+          <a class="aStyle forgot-password float-right" routerlink="../request-password" href="/ngx-admin/auth/request-password">重置密码</a>
         </div>
-        <button class="btn btn-hero-success" style="width: 100%" (click)="login()">登录</button>
+        <div class="form-group">
+          <button class="btn btn-hero-success buttonStyle" (click)="login()" [disabled]="userForm.invalid">登录</button>
+        </div>
+        <div class="form-group">
+          <button class="btn btn-hero-secondary buttonStyle" (click)="register()">注册</button>
+        </div>
       </form>
     </nb-auth-block>
   </nb-card-body>

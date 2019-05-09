@@ -2,14 +2,13 @@ import {RouterModule, Routes} from '@angular/router';
 import {NgModule} from '@angular/core';
 import {LoginComponent} from './login/login.component';
 import {PortalComponent} from './portal.component';
-import {NbLoginComponent} from '@nebular/auth';
+import {RegisterComponent} from './register/register.component';
 
 const routes: Routes = [
   {
     path: '', component: PortalComponent,
     children: [
       {path: 'login', component: LoginComponent},
-      // {path: 'login', component: NbLoginComponent},
       // {path: 'reset-password', component: ResetPasswordComponent},
       // {path: 'forget-password', component: ForgetPasswordComponent},
     ],
@@ -29,6 +28,5 @@ export class PortalRoutingModule {
 export const routedComponents = [
   PortalComponent,
   LoginComponent,
-  // ResetPasswordComponent,
-  // ForgetPasswordComponent,
+  RegisterComponent,
 ];

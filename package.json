@@ -53,6 +53,7 @@
     "@ng-bootstrap/ng-bootstrap": "^4.0.0",
     "@swimlane/ngx-charts": "^10.0.0",
     "@types/marked": "^0.6.5",
+    "ngx-bootstrap": "^3.0.1",
     "marked": "^0.6.2",
     "prismjs": "^1.16.0",
     "angular-tree-component": "7.2.0",
