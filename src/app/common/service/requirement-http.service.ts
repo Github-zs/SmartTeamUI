@@ -8,6 +8,8 @@ export class RequirementHttpService {
     headers: new HttpHeaders({ 'Content-Type': 'application/json;application/x-www-form-urlencodeed; charset=utf-8'}),
   };
 
+  headers = new HttpHeaders({authorization : 'Bearer ' + localStorage.getItem('token')});
+
   constructor(
     private http: HttpClient,
   ) {}

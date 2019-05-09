@@ -9,6 +9,7 @@ export class TaskHttpService {
     headers: new HttpHeaders({ 'Content-Type': 'application/json;application/x-www-form-urlencodeed; charset=utf-8'}),
   };
 
+  headers = new HttpHeaders({authorization : 'Bearer ' + localStorage.getItem('token')});
 
   constructor(
     private http: HttpClient,
@@ -23,7 +24,7 @@ export class TaskHttpService {
   }
 
   selectAllTaskUrl(): Observable<any> {
-    return this.http.get('/selectAllTaskUrl');
+    return this.http.get('/selectAllTaskUrl', {headers: this.headers});
   }
 
   selectTaskById(taskId): Observable<any> {
