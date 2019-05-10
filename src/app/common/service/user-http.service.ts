@@ -26,4 +26,8 @@ export class UserHttpService {
   getToken(username, password): Observable<any> {
     return this.http.get(`/auth/token?username=${username}&password=${password}`);
   }
+
+  register(userModel): Observable<any> {
+    return this.http.post('/user/register', userModel, {headers: this.headers});
+  }
 }

@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {BsModalRef} from 'ngx-bootstrap';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {passwordMatcherValidator} from '../../@core/eaf-components/common/form-validation/password-matcher.validator';
+import {UserHttpService} from '../../common/service/user-http.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'ngx-redister',
@@ -10,11 +12,15 @@ import {passwordMatcherValidator} from '../../@core/eaf-components/common/form-v
 })
 export class RegisterComponent implements OnInit {
 
-  public userForm: FormGroup;
+  private userForm: FormGroup;
+
+  private userModel: any;
 
   constructor(
     private bsRef: BsModalRef,
     private fb: FormBuilder,
+    private service: UserHttpService,
+    private router: Router,
   ) { }
 
   ngOnInit() {
@@ -47,7 +53,14 @@ export class RegisterComponent implements OnInit {
   }
 
   save() {
-
+    this.userModel = {
+      userName: this.userForm.value.username,
+      loginName: this.userForm.value.loginName,
+      loginPassword: this.userForm.value.newPassword,
+    };
+    this.service.register(this.userModel).subscribe( data => {
+      this.router.navigate(['/portal/login']);
+    });
   }
 
 }
