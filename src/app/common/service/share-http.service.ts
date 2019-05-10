@@ -1,5 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {Observable} from 'rxjs';
 
 @Injectable()
 export class ShareHttpService {
@@ -9,4 +10,12 @@ export class ShareHttpService {
   constructor(
     private http: HttpClient,
   ) {}
+
+  getAll(): Observable<any> {
+    return this.http.get('/share/getAll', {headers: this.headers});
+  }
+
+  insert(shareModel): Observable<any> {
+    return this.http.post('/share/add', shareModel, {headers: this.headers});
+  }
 }

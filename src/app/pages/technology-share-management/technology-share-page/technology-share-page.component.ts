@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {NewsService} from '../services/news.service';
+import {ShareHttpService} from '../../../common/service/share-http.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'ngx-technology-share-page',
@@ -7,6 +9,8 @@ import {NewsService} from '../services/news.service';
   styleUrls: ['./technology-share-page.component.scss'],
 })
 export class TechnologySharePageComponent implements OnInit {
+
+  private shareList: Array<any>;
 
   secondCard = {
     news: [],
@@ -16,9 +20,24 @@ export class TechnologySharePageComponent implements OnInit {
   };
   pageSize = 10;
 
-  constructor(private newsService: NewsService) {}
+  constructor(
+    private newsService: NewsService,
+    private shareService: ShareHttpService,
+    private router: Router,
+  ) {}
 
   ngOnInit() {
+    this.getAll();
+  }
+
+  getAll() {
+    this.shareService.getAll().subscribe( data => {
+      this.shareList = data;
+    });
+  }
+
+  add() {
+    this.router.navigate(['/pages/technology-share-management/add-share-page']);
   }
 
   loadNext(cardData) {

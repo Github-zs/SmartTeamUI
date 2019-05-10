@@ -1,17 +1,32 @@
-<div class="infinite-cards row">
-  <nb-card>
-    <nb-card-header>技术分享</nb-card-header>
-    <nb-list
-      nbInfiniteList
-      listenWindowScroll
-      [threshold]="500"
-      (bottomThreshold)="loadNext(secondCard)">
-      <nb-list-item *ngFor="let newsPost of secondCard.news">
-        <ngx-news-post [post]="newsPost"></ngx-news-post>
-      </nb-list-item>
-      <nb-list-item *ngFor="let _ of secondCard.placeholders">
-        <ngx-news-post-placeholder></ngx-news-post-placeholder>
-      </nb-list-item>
-    </nb-list>
-  </nb-card>
-</div>
+<!--<div class="infinite-cards row">-->
+<!--  <nb-card>-->
+<!--    <nb-card-header>-->
+<!--      技术分享-->
+<!--      <button class="btn btn-hero-primary float-right">新建</button>-->
+<!--    </nb-card-header>-->
+<!--    <nb-list-->
+<!--      nbInfiniteList-->
+<!--      listenWindowScroll-->
+<!--      [threshold]="500"-->
+<!--      (bottomThreshold)="loadNext(secondCard)">-->
+<!--      <nb-list-item *ngFor="let newsPost of secondCard.news">-->
+<!--        <ngx-news-post [post]="newsPost"></ngx-news-post>-->
+<!--      </nb-list-item>-->
+<!--      <nb-list-item *ngFor="let _ of secondCard.placeholders">-->
+<!--        <ngx-news-post-placeholder></ngx-news-post-placeholder>-->
+<!--      </nb-list-item>-->
+<!--    </nb-list>-->
+<!--  </nb-card>-->
+<!--</div>-->
+
+<nb-card>
+  <nb-card-header>
+    文档列表
+    <button class="btn btn-hero-primary float-right" (click)="add()">新建</button>
+  </nb-card-header>
+  <nb-list>
+    <nb-list-item *ngFor="let share of shareList">
+      <a routerLink="/pages/all-task-management/task-detail-page" [queryParams]="{shareId: share.shareId}">{{ share.shareTitle }}</a>
+    </nb-list-item>
+  </nb-list>
+</nb-card>
