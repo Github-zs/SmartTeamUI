@@ -26,4 +26,8 @@ export class RequirementHttpService {
   delete(requirementId): Observable<any> {
     return this.http.delete('/requirement/delete', {params: {requirementId: requirementId}, headers: this.headers});
   }
+
+  getById(requirementId): Observable<any> {
+    return this.http.get('/requirement/getById', {params: {requirementId: requirementId}, headers: this.headers});
+  }
 }

@@ -5,7 +5,7 @@
   </nb-card-header>
   <nb-list>
     <nb-list-item *ngFor="let requirement of requirementList">
-      <a routerLink="/pages/all-task-management/task-detail-page" [queryParams]="{requirementId: requirement.requirementId}">{{ requirement.requirementTitle }}</a>
+      <a routerLink="/pages/document-management/requirement-detail-page" [queryParams]="{requirementId: requirement.requirementId}">{{ requirement.requirementTitle }}</a>
     </nb-list-item>
   </nb-list>
 </nb-card>

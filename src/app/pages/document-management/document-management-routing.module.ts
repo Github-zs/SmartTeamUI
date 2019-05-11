@@ -8,6 +8,7 @@ import {
   AddRequirementPageComponent,
 } from './requirement-management/add-requirement-page/add-requirement-page.component';
 import {DesignDetailPageComponent} from './design-management/design-detail-page/design-detail-page.component';
+import {RequirementDetailPageComponent} from './requirement-management/requirement-detail-page/requirement-detail-page.component';
 
 const routes: Routes = [
   {
@@ -33,6 +34,10 @@ const routes: Routes = [
       {
         path: 'design-detail-page',
         component: DesignDetailPageComponent,
+      },
+      {
+        path: 'requirement-detail-page',
+        component: RequirementDetailPageComponent,
       },
     ],
   },

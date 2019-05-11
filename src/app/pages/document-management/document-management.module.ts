@@ -13,6 +13,7 @@ import {
 import {DesignHttpService} from '../../common/service/design-http.service';
 import {RequirementHttpService} from '../../common/service/requirement-http.service';
 import { DesignDetailPageComponent } from './design-management/design-detail-page/design-detail-page.component';
+import { RequirementDetailPageComponent } from './requirement-management/requirement-detail-page/requirement-detail-page.component';
 
 @NgModule({
   imports: [
@@ -28,6 +29,7 @@ import { DesignDetailPageComponent } from './design-management/design-detail-pag
     AddDesignPageComponent,
     AddRequirementPageComponent,
     DesignDetailPageComponent,
+    RequirementDetailPageComponent,
   ],
   providers: [DesignHttpService, RequirementHttpService],
 })
