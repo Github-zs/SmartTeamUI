@@ -6,6 +6,7 @@ import {TechnologyShareManagementComponent} from './technology-share-management.
 import {ShareHttpService} from '../../common/service/share-http.service';
 import { AddSharePageComponent } from './add-share-page/add-share-page.component';
 import {CKEditorModule} from 'ng2-ckeditor';
+import { ShareDetailPageComponent } from './share-detail-page/share-detail-page.component';
 
 @NgModule({
   imports: [
@@ -14,7 +15,7 @@ import {CKEditorModule} from 'ng2-ckeditor';
     CKEditorModule,
     TechnologyShareManagementRoutingModule,
   ],
-  declarations: [TechnologyShareManagementComponent, AddSharePageComponent],
+  declarations: [TechnologyShareManagementComponent, AddSharePageComponent, ShareDetailPageComponent],
   providers: [ShareHttpService],
 })
 export class TechnologyShareManagementModule {

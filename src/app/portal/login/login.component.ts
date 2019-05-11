@@ -70,7 +70,7 @@ export class LoginComponent implements OnInit {
     const userInfo = this.userForm.value;
     this.userService.getToken(userInfo.username, userInfo.password).subscribe( data => {
       localStorage.setItem('token', data['token']);
-      this.route.navigate(['/pages']);
+      this.route.navigate(['/pages/dashboard-management/dashboard-page']);
     }, (error: HttpErrorResponse) => {
 
       this.errorToast('用户名或密码错误！');

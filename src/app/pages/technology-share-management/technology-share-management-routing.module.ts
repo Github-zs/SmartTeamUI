@@ -2,6 +2,7 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {TechnologyShareManagementComponent} from './technology-share-management.component';
 import {AddSharePageComponent} from './add-share-page/add-share-page.component';
+import {ShareDetailPageComponent} from './share-detail-page/share-detail-page.component';
 
 const routes: Routes = [
   {
@@ -15,6 +16,10 @@ const routes: Routes = [
       {
         path: 'add-share-page',
         component: AddSharePageComponent,
+      },
+      {
+        path: 'share-detail-page',
+        component: ShareDetailPageComponent,
       },
     ],
   },

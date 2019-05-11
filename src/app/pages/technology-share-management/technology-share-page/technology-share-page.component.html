@@ -26,7 +26,7 @@
   </nb-card-header>
   <nb-list>
     <nb-list-item *ngFor="let share of shareList">
-      <a routerLink="/pages/all-task-management/task-detail-page" [queryParams]="{shareId: share.shareId}">{{ share.shareTitle }}</a>
+      <a routerLink="/pages/technology-share-management/share-detail-page" [queryParams]="{shareId: share.shareId}">{{ share.shareTitle }}</a>
     </nb-list-item>
   </nb-list>
 </nb-card>
