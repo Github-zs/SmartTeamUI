@@ -37,4 +37,22 @@ export class DashboardPageComponent implements OnInit {
       this.requirementList = data;
     });
   }
+
+  deleteShare(shareId) {
+    this.shareService.delete(shareId).subscribe( data => {
+
+    });
+  }
+
+  deleteDesign(designId) {
+    this.designService.delete(designId).subscribe( data => {
+
+    });
+  }
+
+  deleteRequirement(requirementId) {
+    this.requirementService.delete(requirementId).subscribe( data => {
+
+    });
+  }
 }

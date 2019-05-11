@@ -22,4 +22,8 @@ export class ShareHttpService {
   getByAuthor(): Observable<any> {
     return this.http.get('/share/getByAuthor', {headers: this.headers});
   }
+
+  delete(shareId): Observable<any> {
+    return this.http.delete('/share/delete', {params: {shareId: shareId}, headers: this.headers});
+  }
 }

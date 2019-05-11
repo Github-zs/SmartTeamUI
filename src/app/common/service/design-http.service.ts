@@ -22,4 +22,8 @@ export class DesignHttpService {
   getByAuthor(): Observable<any> {
     return this.http.get('/design/getByAuthor', {headers: this.headers});
   }
+
+  delete(designId): Observable<any> {
+    return this.http.delete('/design/delete', {params: {designId: designId}, headers: this.headers});
+  }
 }

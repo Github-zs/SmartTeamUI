@@ -22,4 +22,8 @@ export class RequirementHttpService {
   getByAuthor(): Observable<any> {
     return this.http.get('/requirement/getByAuthor', {headers: this.headers});
   }
+
+  delete(requirementId): Observable<any> {
+    return this.http.delete('/requirement/delete', {params: {requirementId: requirementId}, headers: this.headers});
+  }
 }
