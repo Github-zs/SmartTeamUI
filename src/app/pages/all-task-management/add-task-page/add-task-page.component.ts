@@ -83,7 +83,7 @@ export class AddTaskPageComponent implements OnInit {
 
     this.service.insert(taskManagementModel).subscribe( data => {
       this.service.updateTaskExt(taskGroupExtModel).subscribe( res => {
-
+        history.back();
       });
     });
   }

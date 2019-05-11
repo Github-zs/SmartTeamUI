@@ -30,4 +30,8 @@ export class UserHttpService {
   register(userModel): Observable<any> {
     return this.http.post('/user/register', userModel);
   }
+
+  resetPassword(userModel): Observable<any> {
+    return this.http.post('/user/resetPassword', userModel, {headers: this.headers});
+  }
 }

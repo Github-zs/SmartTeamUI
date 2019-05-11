@@ -3,7 +3,7 @@ import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import * as _ from 'lodash';
 import {
-  passwordMatcherValidator
+  passwordMatcherValidator,
 } from '../../../@core/eaf-components/common/form-validation/password-matcher.validator';
 import {UserHttpService} from '../../../common/service/user-http.service';
 
@@ -15,6 +15,8 @@ import {UserHttpService} from '../../../common/service/user-http.service';
 export class ResetPasswordPageComponent implements OnInit {
 
   public passwordForm: FormGroup;
+
+  private userModel: any;
 
   constructor(
     private route: Router,
@@ -49,7 +51,12 @@ export class ResetPasswordPageComponent implements OnInit {
   }
 
   save() {
-    this.service.getAllUser().subscribe( data => {
+    this.userModel = {
+      loginPassword: this.passwordForm.value.newPassword,
+    };
+
+    this.service.resetPassword(this.userModel).subscribe( data => {
+      this.route.navigate(['/portal/login']);
     });
   }
 

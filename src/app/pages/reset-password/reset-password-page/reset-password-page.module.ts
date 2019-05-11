@@ -4,6 +4,7 @@ import {CommonModule} from '@angular/common';
 import {ResetPasswordPageRoutingModule} from './reset-password-page-routing.module';
 import {ResetPasswordPageComponent} from './reset-password-page.component';
 import {NbCardModule, NbInputModule} from '@nebular/theme';
+import {UserHttpService} from '../../../common/service/user-http.service';
 
 @NgModule({
   imports: [
@@ -14,6 +15,7 @@ import {NbCardModule, NbInputModule} from '@nebular/theme';
     ResetPasswordPageRoutingModule,
   ],
   declarations: [ResetPasswordPageComponent],
+  providers: [UserHttpService],
 })
 export class ResetPasswordPageModule {
 
