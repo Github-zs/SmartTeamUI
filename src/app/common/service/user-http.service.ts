@@ -28,6 +28,6 @@ export class UserHttpService {
   }
 
   register(userModel): Observable<any> {
-    return this.http.post('/user/register', userModel, {headers: this.headers});
+    return this.http.post('/user/register', userModel);
   }
 }

@@ -4,6 +4,10 @@ import {UserHttpService} from '../../common/service/user-http.service';
 import {Router} from '@angular/router';
 import {BsModalRef, BsModalService} from 'ngx-bootstrap';
 import {RegisterComponent} from '../register/register.component';
+import {HttpErrorResponse} from '@angular/common/http';
+import {NbGlobalPhysicalPosition, NbToastrService} from '@nebular/theme';
+import {NbToastrConfig} from '@nebular/theme/components/toastr/toastr-config';
+import {NbToastStatus} from '@nebular/theme/components/toastr/model';
 
 @Component({
   selector: 'ngx-login-component',
@@ -18,6 +22,12 @@ export class LoginComponent implements OnInit {
   public bsRef: BsModalRef;
 
 
+  public nbToastrConfig: NbToastrConfig = {
+    position: NbGlobalPhysicalPosition.TOP_RIGHT,
+    status: NbToastStatus.DANGER,
+    duration: 3000,
+  };
+
   config = {
     animated: true,
     keyboard: false,
@@ -31,6 +41,7 @@ export class LoginComponent implements OnInit {
     private userService: UserHttpService,
     private route: Router,
     private bsService: BsModalService,
+    private nbToastrService: NbToastrService,
   ) {
 
   }
@@ -60,11 +71,24 @@ export class LoginComponent implements OnInit {
     this.userService.getToken(userInfo.username, userInfo.password).subscribe( data => {
       localStorage.setItem('token', data['token']);
       this.route.navigate(['/pages']);
+    }, (error: HttpErrorResponse) => {
+
+      this.errorToast('用户名或密码错误！');
+      this.userForm.controls['username'].setValue('') ;
+      this.userForm.controls['password'].setValue('') ;
+
     });
   }
 
   register() {
     this.bsRef = this.bsService.show(RegisterComponent, this.config);
+  }
+
+  errorToast(message) {
+    this.nbToastrService.show(
+      message,
+      `error`,
+      this.nbToastrConfig);
   }
 
 }
