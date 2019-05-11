@@ -18,4 +18,8 @@ export class RequirementHttpService {
   insert(requirementModel) {
     return this.http.post('/requirement/add', requirementModel, {headers: this.headers});
   }
+
+  getByAuthor(): Observable<any> {
+    return this.http.get('/requirement/getByAuthor', {headers: this.headers});
+  }
 }

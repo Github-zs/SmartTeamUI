@@ -1,8 +1,52 @@
 <div class="row">
   <div class="col-sm-6">
+    <nb-card>
+      <nb-card-header>
+        这是一些简介
+      </nb-card-header>
+      <nb-card-body>
 
+      </nb-card-body>
+    </nb-card>
   </div>
   <div class="col-sm-6">
+    <nb-card>
+      <nb-card-header>
+        我的任务
+      </nb-card-header>
+      <nb-card-body>
 
+      </nb-card-body>
+    </nb-card>
+    <nb-card>
+      <nb-card-header>
+        我的分享贴
+      </nb-card-header>
+      <nb-list>
+        <nb-list-item *ngFor="let share of shareList">
+          <a routerLink="/pages/all-task-management/task-detail-page" [queryParams]="{shareId: share.shareId}">{{ share.shareTitle }}</a>
+        </nb-list-item>
+      </nb-list>
+    </nb-card>
+    <nb-card>
+      <nb-card-header>
+        我的需求
+      </nb-card-header>
+      <nb-list>
+        <nb-list-item *ngFor="let requirement of requirementList">
+          <a routerLink="/pages/all-task-management/task-detail-page" [queryParams]="{requirementId: requirement.requirementId}">{{ requirement.requirementTitle }}</a>
+        </nb-list-item>
+      </nb-list>
+    </nb-card>
+    <nb-card>
+      <nb-card-header>
+        我的设计
+      </nb-card-header>
+      <nb-list>
+        <nb-list-item *ngFor="let design of designList">
+          <a routerLink="/pages/all-task-management/task-detail-page" [queryParams]="{designId: design.designId}">{{ design.designTitle }}</a>
+        </nb-list-item>
+      </nb-list>
+    </nb-card>
   </div>
 </div>

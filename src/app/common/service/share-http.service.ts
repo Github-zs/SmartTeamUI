@@ -18,4 +18,8 @@ export class ShareHttpService {
   insert(shareModel): Observable<any> {
     return this.http.post('/share/add', shareModel, {headers: this.headers});
   }
+
+  getByAuthor(): Observable<any> {
+    return this.http.get('/share/getByAuthor', {headers: this.headers});
+  }
 }

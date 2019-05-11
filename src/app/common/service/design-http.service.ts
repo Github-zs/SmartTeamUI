@@ -18,4 +18,8 @@ export class DesignHttpService {
   insert(designModel): Observable<any> {
     return this.http.post('/design/add', designModel, {headers: this.headers});
   }
+
+  getByAuthor(): Observable<any> {
+    return this.http.get('/design/getByAuthor', {headers: this.headers});
+  }
 }
