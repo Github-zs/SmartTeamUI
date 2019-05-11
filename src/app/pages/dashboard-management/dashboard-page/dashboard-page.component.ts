@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ShareHttpService} from '../../../common/service/share-http.service';
 import {DesignHttpService} from '../../../common/service/design-http.service';
 import {RequirementHttpService} from '../../../common/service/requirement-http.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'ngx-dashboard-page',
@@ -39,20 +40,26 @@ export class DashboardPageComponent implements OnInit {
   }
 
   deleteShare(shareId) {
-    this.shareService.delete(shareId).subscribe( data => {
-
-    });
+    if (confirm('确认删除吗？')) {
+      this.shareService.delete(shareId).subscribe( data => {
+        location.reload();
+      });
+    }
   }
 
   deleteDesign(designId) {
-    this.designService.delete(designId).subscribe( data => {
-
-    });
+    if (confirm('确认删除吗？'))　{
+      this.designService.delete(designId).subscribe( data => {
+        location.reload();
+      });
+    }
   }
 
   deleteRequirement(requirementId) {
-    this.requirementService.delete(requirementId).subscribe( data => {
-
-    });
+    if (confirm('确认删除吗？')) {
+      this.requirementService.delete(requirementId).subscribe( data => {
+        location.reload();
+      });
+    }
   }
 }
