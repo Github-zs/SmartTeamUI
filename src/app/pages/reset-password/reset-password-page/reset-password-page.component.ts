@@ -58,6 +58,7 @@ export class ResetPasswordPageComponent implements OnInit {
     this.service.checkOldPassword(this.passwordForm.value.originalPassword).subscribe( data => {
       if (!data) {
         this.errorToast('旧密码输入错误，请重新输入');
+        this.passwordForm.controls['originalPassword'].setValue('');
       }
     });
   }
