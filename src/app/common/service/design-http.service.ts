@@ -26,4 +26,8 @@ export class DesignHttpService {
   delete(designId): Observable<any> {
     return this.http.delete('/design/delete', {params: {designId: designId}, headers: this.headers});
   }
+
+  getById(designId): Observable<any> {
+    return this.http.get('/design/getById', {params: {designId: designId}, headers: this.headers});
+  }
 }

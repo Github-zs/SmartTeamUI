@@ -5,7 +5,7 @@ import {ShareHttpService} from '../../../common/service/share-http.service';
 @Component({
   selector: 'ngx-share-detail-page',
   templateUrl: './share-detail-page.component.html',
-  styleUrls: ['./share-detail-page.component.scss']
+  styleUrls: ['./share-detail-page.component.scss'],
 })
 export class ShareDetailPageComponent implements OnInit {
 

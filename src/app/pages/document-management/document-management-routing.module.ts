@@ -7,6 +7,7 @@ import {AddDesignPageComponent} from './design-management/add-design-page/add-de
 import {
   AddRequirementPageComponent,
 } from './requirement-management/add-requirement-page/add-requirement-page.component';
+import {DesignDetailPageComponent} from './design-management/design-detail-page/design-detail-page.component';
 
 const routes: Routes = [
   {
@@ -28,6 +29,10 @@ const routes: Routes = [
       {
         path: 'add-requirement-page',
         component: AddRequirementPageComponent,
+      },
+      {
+        path: 'design-detail-page',
+        component: DesignDetailPageComponent,
       },
     ],
   },

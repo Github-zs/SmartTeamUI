@@ -5,7 +5,7 @@
   </nb-card-header>
   <nb-list>
     <nb-list-item *ngFor="let design of designList">
-      <a routerLink="/pages/all-task-management/task-detail-page" [queryParams]="{designId: design.designId}">{{ design.designTitle }}</a>
+      <a routerLink="/pages/document-management/design-detail-page" [queryParams]="{designId: design.designId}">{{ design.designTitle }}</a>
     </nb-list-item>
   </nb-list>
 </nb-card>

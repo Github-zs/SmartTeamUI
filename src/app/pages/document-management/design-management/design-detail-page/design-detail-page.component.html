@@ -1,0 +1,18 @@
+<nb-card *ngIf="designModel">
+  <nb-card-header>
+    <div class="row">
+      <i class="nb-arrow-left float-left design-icon" (click)="cancel()"></i>
+    </div>
+    <br>
+    <div class="form-group">
+      <h1>{{designModel.designTitle}}</h1>
+    </div>
+    <i class="nb-edit float-right task-icon"></i>
+  </nb-card-header>
+  <nb-card-body>
+    <div class="form-group">
+      <label>描述:</label>
+      <ckeditor [value]="designModel.designContent" [readonly]="true" [config]="editConfig"></ckeditor>
+    </div>
+  </nb-card-body>
+</nb-card>
