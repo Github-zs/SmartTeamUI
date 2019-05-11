@@ -34,4 +34,8 @@ export class UserHttpService {
   resetPassword(userModel): Observable<any> {
     return this.http.post('/user/resetPassword', userModel, {headers: this.headers});
   }
+
+  checkOldPassword(oldPassword): Observable<any> {
+    return this.http.get('/user/checkOldPassword', {params: {oldPassword: oldPassword}, headers: this.headers});
+  }
 }

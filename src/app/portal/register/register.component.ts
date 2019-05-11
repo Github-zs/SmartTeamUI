@@ -19,7 +19,7 @@ export class RegisterComponent implements OnInit {
 
   private userModel: any;
 
-  public nbToastrConfig: NbToastrConfig = {
+  public nbToastrConfig = {
     position: NbGlobalPhysicalPosition.TOP_RIGHT,
     status: NbToastStatus.DANGER,
     duration: 3000,

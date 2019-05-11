@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
   public bsRef: BsModalRef;
 
 
-  public nbToastrConfig: NbToastrConfig = {
+  public nbToastrConfig = {
     position: NbGlobalPhysicalPosition.TOP_RIGHT,
     status: NbToastStatus.DANGER,
     duration: 3000,

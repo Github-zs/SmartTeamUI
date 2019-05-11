@@ -6,6 +6,8 @@ import {
   passwordMatcherValidator,
 } from '../../../@core/eaf-components/common/form-validation/password-matcher.validator';
 import {UserHttpService} from '../../../common/service/user-http.service';
+import {NbGlobalPhysicalPosition, NbToastrService} from '@nebular/theme';
+import {NbToastStatus} from '@nebular/theme/components/toastr/model';
 
 @Component({
   selector: 'ngx-reset-password-page',
@@ -18,10 +20,17 @@ export class ResetPasswordPageComponent implements OnInit {
 
   private userModel: any;
 
+  public nbToastrConfig = {
+    position: NbGlobalPhysicalPosition.TOP_RIGHT,
+    status: NbToastStatus.DANGER,
+    duration: 3000,
+  };
+
   constructor(
     private route: Router,
     private fb: FormBuilder,
     private service: UserHttpService,
+    private nbToastrService: NbToastrService,
   ) { }
 
   ngOnInit() {
@@ -46,7 +55,10 @@ export class ResetPasswordPageComponent implements OnInit {
   }
 
   checkOldPassword() {
-    this.service.selectByLoginName('test1').subscribe( data => {
+    this.service.checkOldPassword(this.passwordForm.value.originalPassword).subscribe( data => {
+      if (!data) {
+        this.errorToast('旧密码输入错误，请重新输入');
+      }
     });
   }
 
@@ -63,4 +75,12 @@ export class ResetPasswordPageComponent implements OnInit {
   cancel() {
     this.route.navigate(['/pages/dashboard-management/dashboard-page']);
   }
+
+  errorToast(message) {
+    this.nbToastrService.show(
+      message,
+      `error`,
+      this.nbToastrConfig);
+  }
+
 }
