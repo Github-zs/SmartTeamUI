@@ -3,6 +3,7 @@ import {ShareHttpService} from '../../../common/service/share-http.service';
 import {DesignHttpService} from '../../../common/service/design-http.service';
 import {RequirementHttpService} from '../../../common/service/requirement-http.service';
 import {Router} from '@angular/router';
+import {TaskHttpService} from '../../../common/service/task-http.service';
 
 @Component({
   selector: 'ngx-dashboard-page',
@@ -17,10 +18,15 @@ export class DashboardPageComponent implements OnInit {
 
   private requirementList: Array<any> = [];
 
+  private taskList: Array<any> = [];
+
+  private urlList: Array<any> = [];
+
   constructor(
     private shareService: ShareHttpService,
     private designService: DesignHttpService,
     private requirementService: RequirementHttpService,
+    private taskService: TaskHttpService,
   ) { }
 
   ngOnInit() {
@@ -37,6 +43,23 @@ export class DashboardPageComponent implements OnInit {
     this.requirementService.getByAuthor().subscribe( data => {
       this.requirementList = data;
     });
+    this.taskService.selectByExecutor().subscribe( data => {
+      this.taskList = data;
+
+      this.taskList.forEach( task => {
+        this.taskService.selectUrlByTask(task.taskId).subscribe( res => {
+
+          const infoModel = {
+            url: res.taskUrl,
+            taskId: task.taskId,
+          };
+
+          this.urlList.push(infoModel);
+        });
+      });
+
+    });
+
   }
 
   deleteShare(shareId) {

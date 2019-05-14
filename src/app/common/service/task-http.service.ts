@@ -27,4 +27,11 @@ export class TaskHttpService {
     return this.http.get('/selectTaskById', {params: {taskId: taskId}, headers: this.headers});
   }
 
+  selectByExecutor(): Observable<any> {
+    return this.http.get('/task/selectByExecutor', {headers: this.headers});
+  }
+
+  selectUrlByTask(taskId): Observable<any> {
+    return this.http.get('/selectUrlByTask', {params: {taskId: taskId}, headers: this.headers});
+  }
 }

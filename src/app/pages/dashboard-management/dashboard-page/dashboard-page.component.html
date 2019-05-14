@@ -10,12 +10,16 @@
     </nb-card>
   </div>
   <div class="col-sm-6">
-    <nb-card>
+    <nb-card *ngIf="urlList">
       <nb-card-header>
         我的任务
       </nb-card-header>
       <nb-card-body>
-
+        <nb-list>
+          <nb-list-item *ngFor="let info of urlList">
+            <a routerLink="/pages/all-task-management/task-detail-page" [queryParams]="{taskId: info.taskId}">{{ info.url }}</a>
+          </nb-list-item>
+        </nb-list>
       </nb-card-body>
     </nb-card>
     <nb-card>
