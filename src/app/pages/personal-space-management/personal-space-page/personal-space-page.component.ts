@@ -20,13 +20,19 @@ export class PersonalSpacePageComponent implements OnInit {
   }
 
   getAll() {
-    this.service.getAll().subscribe( data => {
+    this.service.getByAuthor().subscribe( data => {
         this.noteList = data;
     });
   }
 
   add() {
     this.router.navigate(['/pages/personal-space-management/add-note-page']);
+  }
+
+  deleteNote(noteId) {
+    this.service.delete(noteId).subscribe( data => {
+      location.reload();
+    });
   }
 
 }

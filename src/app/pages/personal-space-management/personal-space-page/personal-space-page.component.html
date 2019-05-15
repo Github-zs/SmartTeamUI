@@ -5,7 +5,8 @@
   </nb-card-header>
   <nb-list>
     <nb-list-item *ngFor="let note of noteList">
-      <a routerLink="/pages/all-task-management/task-detail-page" [queryParams]="{taskId: note.noteId}">{{ note.noteTitle }}</a>
+      <a routerLink="/pages/personal-space-management/note-detail-page" [queryParams]="{noteId: note.noteId}">{{ note.noteTitle }}</a>
+      <i class="nb-trash float-right" style="font-size: 30px;" (click)="deleteNote(note.noteId)"></i>
     </nb-list-item>
   </nb-list>
 </nb-card>

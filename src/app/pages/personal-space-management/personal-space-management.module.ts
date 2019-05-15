@@ -6,15 +6,20 @@ import {PersonalSpaceManagementComponent} from './personal-space-management.comp
 import { AddNotePageComponent } from './add-note-page/add-note-page.component';
 import {CKEditorModule} from 'ng2-ckeditor';
 import {NoteHttpService} from '../../common/service/note-http.service';
+import { NoteDetailPageComponent } from './note-detail-page/note-detail-page.component';
+import {NbInputModule} from '@nebular/theme';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   imports: [
     ThemeModule,
     CommonModule,
     CKEditorModule,
+    NbInputModule,
+    FormsModule,
     PersonalSpaceManagementRoutingModule,
   ],
-  declarations: [PersonalSpaceManagementComponent, AddNotePageComponent],
+  declarations: [PersonalSpaceManagementComponent, AddNotePageComponent, NoteDetailPageComponent],
   providers: [NoteHttpService],
 })
 export class PersonalSpaceManagementModule {
