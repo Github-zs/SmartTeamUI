@@ -8,18 +8,23 @@ import { RequirementManagementComponent } from './requirement-management/require
 import { AddDesignPageComponent } from './design-management/add-design-page/add-design-page.component';
 import {CKEditorModule} from 'ng2-ckeditor';
 import {
-  AddRequirementPageComponent
+  AddRequirementPageComponent,
 } from './requirement-management/add-requirement-page/add-requirement-page.component';
 import {DesignHttpService} from '../../common/service/design-http.service';
 import {RequirementHttpService} from '../../common/service/requirement-http.service';
 import { DesignDetailPageComponent } from './design-management/design-detail-page/design-detail-page.component';
-import { RequirementDetailPageComponent } from './requirement-management/requirement-detail-page/requirement-detail-page.component';
+import {
+  RequirementDetailPageComponent
+} from './requirement-management/requirement-detail-page/requirement-detail-page.component';
+import { EditDesignPageComponent } from './design-management/edit-design-page/edit-design-page.component';
+import {NbInputModule} from '@nebular/theme';
 
 @NgModule({
   imports: [
     ThemeModule,
     CommonModule,
     CKEditorModule,
+    NbInputModule,
     DocumentManagementRoutingModule,
   ],
   declarations: [
@@ -30,6 +35,7 @@ import { RequirementDetailPageComponent } from './requirement-management/require
     AddRequirementPageComponent,
     DesignDetailPageComponent,
     RequirementDetailPageComponent,
+    EditDesignPageComponent,
   ],
   providers: [DesignHttpService, RequirementHttpService],
 })

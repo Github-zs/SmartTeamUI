@@ -39,7 +39,7 @@
       </nb-card-header>
       <nb-list>
         <nb-list-item *ngFor="let requirement of requirementList">
-          <a routerLink="/pages/all-task-management/task-detail-page" [queryParams]="{requirementId: requirement.requirementId}">{{ requirement.requirementTitle }}</a>
+          <a routerLink="/pages/all-task-management/edit-design-page" [queryParams]="{requirementId: requirement.requirementId}">{{ requirement.requirementTitle }}</a>
           <i class="nb-trash float-right" style="font-size: 30px;" (click)="deleteRequirement(requirement.requirementId)"></i>
         </nb-list-item>
       </nb-list>
@@ -50,7 +50,7 @@
       </nb-card-header>
       <nb-list>
         <nb-list-item *ngFor="let design of designList">
-          <a routerLink="/pages/all-task-management/task-detail-page" [queryParams]="{designId: design.designId}">{{ design.designTitle }}</a>
+          <a routerLink="/pages/document-management/edit-design-page" [queryParams]="{designId: design.designId}">{{ design.designTitle }}</a>
           <i class="nb-trash float-right" style="font-size: 30px;" (click)="deleteDesign(design.designId)"></i>
         </nb-list-item>
       </nb-list>

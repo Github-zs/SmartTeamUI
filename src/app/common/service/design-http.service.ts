@@ -30,4 +30,8 @@ export class DesignHttpService {
   getById(designId): Observable<any> {
     return this.http.get('/design/getById', {params: {designId: designId}, headers: this.headers});
   }
+
+  updateById(designModel): Observable<any> {
+    return this.http.post('/design/update', designModel, {headers: this.headers});
+  }
 }

@@ -8,7 +8,10 @@ import {
   AddRequirementPageComponent,
 } from './requirement-management/add-requirement-page/add-requirement-page.component';
 import {DesignDetailPageComponent} from './design-management/design-detail-page/design-detail-page.component';
-import {RequirementDetailPageComponent} from './requirement-management/requirement-detail-page/requirement-detail-page.component';
+import {
+  RequirementDetailPageComponent,
+} from './requirement-management/requirement-detail-page/requirement-detail-page.component';
+import {EditDesignPageComponent} from './design-management/edit-design-page/edit-design-page.component';
 
 const routes: Routes = [
   {
@@ -38,6 +41,10 @@ const routes: Routes = [
       {
         path: 'requirement-detail-page',
         component: RequirementDetailPageComponent,
+      },
+      {
+        path: 'edit-design-page',
+        component: EditDesignPageComponent,
       },
     ],
   },
