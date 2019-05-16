@@ -6,7 +6,6 @@ import {BsModalRef, BsModalService} from 'ngx-bootstrap';
 import {RegisterComponent} from '../register/register.component';
 import {HttpErrorResponse} from '@angular/common/http';
 import {NbGlobalPhysicalPosition, NbToastrService} from '@nebular/theme';
-import {NbToastrConfig} from '@nebular/theme/components/toastr/toastr-config';
 import {NbToastStatus} from '@nebular/theme/components/toastr/model';
 
 @Component({
@@ -64,6 +63,7 @@ export class LoginComponent implements OnInit {
       ],
     });
   }
+
   back() {
     history.back();
   }
@@ -71,17 +71,26 @@ export class LoginComponent implements OnInit {
   login() {
     const userInfo = this.userForm.value;
     this.userService.getToken(userInfo.username, userInfo.password).subscribe( data => {
-      localStorage.setItem('token', data['token']);
-      this.userService.selectByLoginName(userInfo.username).subscribe( res => {
-        localStorage.setItem('username', res['userName']);
+      // localStorage.setItem('token', data['token']);
+      this.setToken(data['token']).then( (next) => {
+        this.userService.selectByLoginName(userInfo.username).subscribe( res => {
+          localStorage.setItem('username', res['userName']);
+          this.route.navigate(['/pages/dashboard-management/dashboard-page']);
+        });
       });
-      this.route.navigate(['/pages/dashboard-management/dashboard-page']);
     }, (error: HttpErrorResponse) => {
 
       this.errorToast('用户名或密码错误！');
       this.userForm.controls['username'].setValue('') ;
       this.userForm.controls['password'].setValue('') ;
 
+    });
+  }
+
+  setToken(token): Promise<any> {
+    return new Promise( resolve => {
+      localStorage.setItem('token', token);
+      resolve('success');
     });
   }
 
