@@ -47,6 +47,8 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit() {
+    localStorage.removeItem('token');
+    localStorage.removeItem('username');
     this.initForm();
   }
 
@@ -70,6 +72,9 @@ export class LoginComponent implements OnInit {
     const userInfo = this.userForm.value;
     this.userService.getToken(userInfo.username, userInfo.password).subscribe( data => {
       localStorage.setItem('token', data['token']);
+      this.userService.selectByLoginName(userInfo.username).subscribe( res => {
+        localStorage.setItem('username', res['userName']);
+      });
       this.route.navigate(['/pages/dashboard-management/dashboard-page']);
     }, (error: HttpErrorResponse) => {
 

@@ -16,7 +16,15 @@ export class HeaderComponent implements OnInit {
 
   user: any;
 
-  userMenu = [{ title: 'Profile' }, { title: 'Log out' }];
+  userMenu = [
+    { title: 'Profile' },
+    {
+      title: 'Log out',
+      link: '/portal/login',
+    },
+  ];
+
+  private username: any;
 
   constructor(private sidebarService: NbSidebarService,
               private menuService: NbMenuService,
@@ -26,6 +34,7 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.username = localStorage.getItem('username');
     this.userService.getUsers()
       .subscribe((users: any) => this.user = users.nick);
   }
