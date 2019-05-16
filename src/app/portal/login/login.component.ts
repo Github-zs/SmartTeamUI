@@ -48,6 +48,7 @@ export class LoginComponent implements OnInit {
   ngOnInit() {
     localStorage.removeItem('token');
     localStorage.removeItem('username');
+    sessionStorage.removeItem('login');
     this.initForm();
   }
 
@@ -72,6 +73,7 @@ export class LoginComponent implements OnInit {
     const userInfo = this.userForm.value;
     this.userService.getToken(userInfo.username, userInfo.password).subscribe( data => {
       // localStorage.setItem('token', data['token']);
+      sessionStorage.setItem('login', 'login');
       this.setToken(data['token']).then( (next) => {
         this.userService.selectByLoginName(userInfo.username).subscribe( res => {
           localStorage.setItem('username', res['userName']);

@@ -1,6 +1,7 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {DashboardManagementComponent} from './dashboard-management.component';
+import {LoginGuard} from '../../common/AuthGuard/loginGuard';
 
 const routes: Routes = [
   {
@@ -10,6 +11,7 @@ const routes: Routes = [
       {
         path: 'dashboard-page',
         loadChildren: './dashboard-page/dashboard-page.module#DashboardPageModule',
+        canActivate: [LoginGuard],
       },
     ],
   },
