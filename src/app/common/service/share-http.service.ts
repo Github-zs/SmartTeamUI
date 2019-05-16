@@ -30,4 +30,8 @@ export class ShareHttpService {
   getById(shareId): Observable<any> {
     return this.http.get('/share/getById', {params: {shareId: shareId}, headers: this.headers});
   }
+
+  updateById(shareModel): Observable<any> {
+    return this.http.post('/share/update', shareModel, {headers: this.headers});
+  }
 }

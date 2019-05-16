@@ -3,6 +3,7 @@ import {RouterModule, Routes} from '@angular/router';
 import {TechnologyShareManagementComponent} from './technology-share-management.component';
 import {AddSharePageComponent} from './add-share-page/add-share-page.component';
 import {ShareDetailPageComponent} from './share-detail-page/share-detail-page.component';
+import {EditSharePageComponent} from './edit-share-page/edit-share-page.component';
 
 const routes: Routes = [
   {
@@ -20,6 +21,10 @@ const routes: Routes = [
       {
         path: 'share-detail-page',
         component: ShareDetailPageComponent,
+      },
+      {
+        path: 'edit-share-page',
+        component: EditSharePageComponent,
       },
     ],
   },

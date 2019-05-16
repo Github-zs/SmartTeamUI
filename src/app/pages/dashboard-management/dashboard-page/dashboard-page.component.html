@@ -28,7 +28,7 @@
       </nb-card-header>
       <nb-list>
         <nb-list-item *ngFor="let share of shareList">
-          <a routerLink="/pages/all-task-management/task-detail-page" [queryParams]="{shareId: share.shareId}">{{ share.shareTitle }}</a>
+          <a routerLink="/pages/technology-share-management/edit-share-page" [queryParams]="{shareId: share.shareId}">{{ share.shareTitle }}</a>
           <i class="nb-trash float-right" style="font-size: 30px;" (click)="deleteShare(share.shareId)"></i>
         </nb-list-item>
       </nb-list>
