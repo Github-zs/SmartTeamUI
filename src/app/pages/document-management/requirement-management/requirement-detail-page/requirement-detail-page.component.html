@@ -10,8 +10,8 @@
   </nb-card-header>
   <nb-card-body>
     <div class="form-group">
-      <label>描述:</label>
-      <ckeditor [value]="requirementModel.requirementContent" [readonly]="true" [config]="editConfig"></ckeditor>
+      <div [innerHTML]="requirementModel.requirementContent"></div>
+<!--      <ckeditor [value]="requirementModel.requirementContent" [readonly]="true" [config]="editConfig"></ckeditor>-->
     </div>
   </nb-card-body>
 </nb-card>

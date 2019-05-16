@@ -1,13 +1,13 @@
-<div [formGroup]="noteForm">
+<div>
   <nb-card *ngIf="noteModel">
     <nb-card-header>
         <div class="action">
           <button class="btn btn-hero-warning float-right" (click)="cancel()">取消</button>
           <button class="btn btn-hero-primary float-right" [disabled]="noteForm.invalid" (click)="save()">提交</button>
         </div>
-        <div class="form-group col-sm-4">
+        <div [formGroup]="noteForm" class="form-group col-sm-4">
           <label>标题：</label>
-          <input type="text" formControlName="title" nbInput fullWidth status="info">
+          <input type="text" class="form-control" placeholder="请输入标题" formControlName="title" nbInput fullWidth status="info">
         </div>
     </nb-card-header>
     <nb-card-body>
