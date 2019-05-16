@@ -12,6 +12,9 @@ import {
   RequirementDetailPageComponent,
 } from './requirement-management/requirement-detail-page/requirement-detail-page.component';
 import {EditDesignPageComponent} from './design-management/edit-design-page/edit-design-page.component';
+import {
+  EditRequirementPageComponent,
+} from './requirement-management/edit-requirement-page/edit-requirement-page.component';
 
 const routes: Routes = [
   {
@@ -45,6 +48,10 @@ const routes: Routes = [
       {
         path: 'edit-design-page',
         component: EditDesignPageComponent,
+      },
+      {
+        path: 'edit-requirement-page',
+        component: EditRequirementPageComponent,
       },
     ],
   },

@@ -18,6 +18,9 @@ import {
 } from './requirement-management/requirement-detail-page/requirement-detail-page.component';
 import { EditDesignPageComponent } from './design-management/edit-design-page/edit-design-page.component';
 import {NbInputModule} from '@nebular/theme';
+import {
+  EditRequirementPageComponent
+} from './requirement-management/edit-requirement-page/edit-requirement-page.component';
 
 @NgModule({
   imports: [
@@ -36,6 +39,7 @@ import {NbInputModule} from '@nebular/theme';
     DesignDetailPageComponent,
     RequirementDetailPageComponent,
     EditDesignPageComponent,
+    EditRequirementPageComponent,
   ],
   providers: [DesignHttpService, RequirementHttpService],
 })

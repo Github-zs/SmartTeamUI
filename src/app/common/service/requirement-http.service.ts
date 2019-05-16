@@ -30,4 +30,8 @@ export class RequirementHttpService {
   getById(requirementId): Observable<any> {
     return this.http.get('/requirement/getById', {params: {requirementId: requirementId}, headers: this.headers});
   }
+
+  updateById(requirementModel): Observable<any> {
+    return this.http.post('/requirement/update', requirementModel, {headers: this.headers});
+  }
 }

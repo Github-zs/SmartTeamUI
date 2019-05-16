@@ -1,11 +1,11 @@
 <div>
-  <nb-card *ngIf="designModel">
+  <nb-card *ngIf="requirementModel">
     <nb-card-header>
       <div class="action">
         <button class="btn btn-hero-warning float-right" (click)="cancel()">取消</button>
-        <button class="btn btn-hero-primary float-right" [disabled]="designForm.invalid" (click)="save()">提交</button>
+        <button class="btn btn-hero-primary float-right" [disabled]="requirementForm.invalid" (click)="save()">提交</button>
       </div>
-      <div  [formGroup]="designForm" class="form-group col-sm-4">
+      <div [formGroup]="requirementForm" class="form-group col-sm-4">
         <label>标题:</label>
         <input formControlName="title" nbInput fullWidth status="info" type="text" class="form-control" placeholder="请输入标题">
       </div>
@@ -13,7 +13,7 @@
     <nb-card-body>
       <div class="form-group col-sm-12">
         <label>描述:</label>
-        <ckeditor [value]="designModel.designContent" [config]="editConfig" (editorChange)="change($event)"></ckeditor>
+        <ckeditor [value]="requirementModel.requirementContent" [config]="editConfig" (editorChange)="change($event)"></ckeditor>
       </div>
     </nb-card-body>
   </nb-card>
