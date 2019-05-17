@@ -20,6 +20,7 @@ export class LoginComponent implements OnInit {
 
   public bsRef: BsModalRef;
 
+  private loading: boolean = false;
 
   public nbToastrConfig = {
     position: NbGlobalPhysicalPosition.TOP_RIGHT,
@@ -70,6 +71,7 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
+    this.loading = true;
     const userInfo = this.userForm.value;
     this.userService.getToken(userInfo.username, userInfo.password).subscribe( data => {
       // localStorage.setItem('token', data['token']);
@@ -78,6 +80,7 @@ export class LoginComponent implements OnInit {
         this.userService.selectByLoginName(userInfo.username).subscribe( res => {
           localStorage.setItem('username', res['userName']);
           this.route.navigate(['/pages/dashboard-management/dashboard-page']);
+          this.loading = false;
         });
       });
     }, (error: HttpErrorResponse) => {

@@ -5,7 +5,7 @@ import {PortalRoutingModule, routedComponents} from './portal-routing.module';
 import {UserHttpService} from '../common/service/user-http.service';
 import {FormsModule} from '@angular/forms';
 import {NbAuthModule} from '@nebular/auth';
-import {NbInputModule, NbToastrModule, NbToastrService} from '@nebular/theme';
+import {NbInputModule, NbSpinnerModule, NbToastrModule, NbToastrService} from '@nebular/theme';
 import { RegisterComponent } from './register/register.component';
 import {ModalModule} from 'ngx-bootstrap';
 import {config} from 'rxjs';
@@ -19,6 +19,7 @@ import {config} from 'rxjs';
     ModalModule.forRoot(),
     NbAuthModule,
     NbInputModule,
+    NbSpinnerModule,
     NbToastrModule.forRoot(),
   ],
   declarations: [
