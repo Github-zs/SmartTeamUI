@@ -7,6 +7,7 @@ import {NbListModule} from '@nebular/theme';
 import {CKEditorModule} from 'ng2-ckeditor';
 import {EditorsModule} from '../../../common/component/editors/editors.module';
 import {TaskHttpService} from '../../../common/service/task-http.service';
+import {SpinnerModule} from '../../../common/component/spinner/spinner.module';
 
 @NgModule({
   imports: [
@@ -16,6 +17,7 @@ import {TaskHttpService} from '../../../common/service/task-http.service';
     AllTaskPageRoutingModule,
     CKEditorModule,
     EditorsModule,
+    SpinnerModule,
   ],
   declarations: [AllTaskPageComponent],
   providers: [TaskHttpService],
