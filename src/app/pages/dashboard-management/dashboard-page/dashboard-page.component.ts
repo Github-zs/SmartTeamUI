@@ -4,6 +4,7 @@ import {DesignHttpService} from '../../../common/service/design-http.service';
 import {RequirementHttpService} from '../../../common/service/requirement-http.service';
 import {Router} from '@angular/router';
 import {TaskHttpService} from '../../../common/service/task-http.service';
+import {InfoPopPageComponent} from '../info-pop-page/info-pop-page.component';
 
 @Component({
   selector: 'ngx-dashboard-page',
@@ -21,6 +22,8 @@ export class DashboardPageComponent implements OnInit {
   private taskList: Array<any> = [];
 
   private urlList: Array<any> = [];
+
+  private infoComponent = InfoPopPageComponent;
 
   constructor(
     private shareService: ShareHttpService,
