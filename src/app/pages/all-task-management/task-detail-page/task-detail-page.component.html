@@ -27,7 +27,8 @@
     </div>
     <div class="form-group">
       <hr>
-      <ckeditor [value]="taskModel.taskDescription" [readonly]="disabled" [config]="editConfig"></ckeditor>
+      <div [innerHTML]="taskModel.taskDescription"></div>
+<!--      <ckeditor [value]="taskModel.taskDescription" [readonly]="disabled" [config]="editConfig"></ckeditor>-->
     </div>
   </nb-card-body>
 </nb-card>
